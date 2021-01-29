@@ -162,7 +162,12 @@ get_header();
         </div>
     </section>
     <section class="uni-question">
-        <div class="uni-question__background">
+        <section class="uni-quize">
+            <div class="uni-quize__wrapper">
+                <?php get_sidebar('quize'); ?>
+            </div>
+        </section>
+    <div class="uni-question__background">
             <div class="uni-question__quest">
                 <div class="uni-question__quest-title">
                     <?php echo the_field('zagolovok_bloka_voprosy',2);?>
@@ -266,7 +271,30 @@ get_header();
                 <?php echo do_shortcode('[testimonial_view id="1"]'); ?>
             </div>
             <div class="uni-reviewes__video">
-
+                <div class="uni-reviewes__video-list">
+                    <?php
+                    $args = array(
+                        'post_type' => 'videorev',
+                        'showposts' => "100", //сколько показать статей
+                        'orderby' => "data", //сортировка по дате
+                        'caller_get_posts' => 1);
+                    $my_query = new wp_query($args);
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) {
+                            $my_query->the_post();
+                            ?>
+                            <a href="<?php the_field('ssylka_na_otzyv_youtube');?>"
+                               class="uni-reviewes__video-item fresco"
+                               style="background-image: url(<?php echo the_field('kartinka_dlya_oblozhki');?>)">
+                                <?php the_field('zagolovok_bloka_otzyvy');?>
+                                <span class="video-type"><?php the_field('opisanie_kredita');?></span>
+                                <img src="<?php echo get_template_directory_uri()?>/images/youtube-play.png">
+                                <span class="video-name"><?php the_field('imya_polzovatelya');?></span>
+                            </a>
+                        <?php }
+                    }
+                    wp_reset_query(); ?>
+                </div>
             </div>
             <div class="uni-reviewes__links">
                 <div class="button-green js-reviewe">

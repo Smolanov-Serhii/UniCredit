@@ -12,6 +12,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+
+
 add_action( 'init', 'register_post_types' );
 function register_post_types()
 {
@@ -168,6 +170,44 @@ function register_post_types()
         'rewrite' => true,
         'query_var' => true,
     ]);
+    register_post_type('videorev', [
+        'label' => null,
+        'labels' => [
+            'name' => 'Видеоотзывы', // основное название для типа записи
+            'singular_name' => 'Видеоотзывы', // название для одной записи этого типа
+            'add_new' => 'Добавить отзыв', // для добавления новой записи
+            'add_new_item' => 'Добавление отзыва', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item' => 'Редактирование отзыва', // для редактирования типа записи
+            'new_item' => 'Новый отзыв', // текст новой записи
+            'view_item' => 'Смотреть отзыв', // для просмотра записи этого типа.
+            'search_items' => 'Искать отзыв', // для поиска по этим типам записи
+            'not_found' => 'Не найдено', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+            'parent_item_colon' => '', // для родителей (у древовидных типов)
+            'menu_name' => 'Видеоотзывы', // название меню
+        ],
+        'description' => '',
+        'public' => true,
+        // 'publicly_queryable'  => null, // зависит от public
+        // 'exclude_from_search' => null, // зависит от public
+        // 'show_ui'             => null, // зависит от public
+        // 'show_in_nav_menus'   => null, // зависит от public
+        'show_in_menu' => null, // показывать ли в меню адмнки
+        // 'show_in_admin_bar'   => null, // зависит от show_in_menu
+        'show_in_rest' => null, // добавить в REST API. C WP 4.7
+        'rest_base' => null, // $post_type. C WP 4.7
+        'menu_position' => null,
+        'menu_icon' => 'dashicons-businessman',
+        //'capability_type'   => 'post',
+        //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+        //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+        'hierarchical' => false,
+        'supports' => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'taxonomies' => [],
+        'has_archive' => true,
+        'rewrite' => true,
+        'query_var' => true,
+    ]);
 }
 
 if ( ! function_exists( 'unicredit_setup' ) ) :
@@ -296,13 +336,13 @@ add_action('customize_register', function($customizer) {
 
     );
 
-    $customizer->add_setting('e-mail',
+    $customizer->add_setting('email',
 
         array('default' => 'unicredit@mail.ru')
 
     );
 
-    $customizer->add_control('e-mail', array(
+    $customizer->add_control('email', array(
 
             'label' => 'e-mail',
 
@@ -321,7 +361,7 @@ add_action('customize_register', function($customizer) {
 
     $customizer->add_control('adress', array(
 
-            'label' => 'facebook',
+            'label' => 'Адрес',
 
             'section' => 'section_one',
 
@@ -483,6 +523,17 @@ function unicredit_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Опросник', 'unicredit' ),
+            'id'            => 'quize',
+            'description'   => esc_html__( 'Перенесите опросник сюда', 'unicredit' ),
+            'before_widget' => '<section id="%1$s" class="quize %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
 }
 add_action( 'widgets_init', 'unicredit_widgets_init' );
 

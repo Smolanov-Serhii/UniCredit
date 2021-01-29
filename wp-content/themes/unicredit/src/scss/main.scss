@@ -953,6 +953,9 @@ body{
     width: 1208px;
     padding: 0 100px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   &__text{
     width: 62%;
@@ -1021,7 +1024,75 @@ body{
       }
     }
   }
+  &__video{
+    width: calc(38% - 30px);
+    &-list{
+      height: 522px;
+      overflow: scroll;
+      position: relative;
+      padding-right: 30px;
+      padding-top: 14px;
+      .ps-scrollbar-y-rail{
+        background-color: #E7E7E7!important;
+        opacity: 1;
+        width: 7px;
+        right: 5px;
+        margin-top: 34px;
+      }
+      .ps-scrollbar-y{
+        background-color: #ECD416!important;
+        border-radius: 4px;
+        width: 13px!important;
+        right: -3px!important;
+      }
+    }
+    &-item{
+      height: 232px;
+      box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: 20px;
+      img{
+        width: 57px;
+        height: auto;
+        transition: 0.3s;
+      }
+      &:hover{
+        img{
+          transform: scale(1.2);
+        }
+      }
+      .video-type{
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        font-size: 14px;
+        color: white;
+        font-family: Montserrat-Medium;
+      }
+      .video-name{
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-family: Montserrat-Bold;
+        font-size: 18px;
+        color: white;
+      }
+    }
+
+  }
   &__links{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
@@ -1041,6 +1112,183 @@ body{
       transition: 0.3s;
       &:hover{
         border: 2px solid #41b718;
+      }
+    }
+  }
+}
+.uni-quize{
+  max-width: 996px;
+  padding: 0 100px;
+  width: 100%;
+  margin: 0 auto 80px auto;
+  &__wrapper{
+    background: #FDFDFD;
+    border: 2px solid #F0DD45;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  .widget-title{
+    background-color: #F0DD45;
+    padding: 10px 0 15px 0;
+    text-align: center;
+  }
+  .democracy{
+    padding: 0 116px 40px 116px;
+    .dem-poll-title{
+      margin: 30px auto 30px auto;
+      text-align: center;
+      font-family: Montserrat-SemiBold;
+      font-size: 18px;
+    }
+    .dem__radio_label{
+      margin-bottom: 30px;
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      .dem__radio{
+        display: none;
+        &:checked + .dem__spot{
+          &:after{
+            background: #41B718;
+            border-radius: 4px;
+            border: none;
+          }
+        }
+      }
+      .dem__spot{
+        position: relative;
+        &:before{
+          content: "";
+          display: block;
+          border: 1px solid #BFBFBF;
+          box-sizing: border-box;
+          border-radius: 4px;
+          width: 21px;
+          height: 21px;
+          margin-right: 27px;
+        }
+        &:after{
+          position: absolute;
+          background: #E0E0E0;
+          border: 1px solid #BFBFBF;
+          box-sizing: border-box;
+          border-radius: 4px;
+          content: "";
+          display: block;
+          width: 15px;
+          height: 15px;
+          top: 3px;
+          left: 3px;
+        }
+      }
+    }
+    ul.dem-vote{
+      font-family: Montserrat-Medium;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    div.dem-bottom{
+      padding-bottom: 0;
+    }
+    .dem-voted-button, .dem-vote-button{
+      text-align: center;
+      width: 100%;
+      input.dem-button{
+        padding: 13px 87px;
+        margin-bottom: 0;
+      }
+    }
+
+  }
+  .dem-edit-link, .dem-copyright{
+    display: none;
+  }
+}
+.uni-footer{
+  &__map{
+    position: relative;
+  }
+  #map{
+    min-height: 572px;
+    max-height: 572px;
+    [class*="ymaps-2"][class*="-ground-pane"] {
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+      /* Firefox 3.5+ */
+      -webkit-filter: grayscale(0.7);
+      /* Chrome 19+ & Safari 6+ */
+    }
+  }
+  &__content{
+    position: absolute;
+    width: calc(50% + 13px);
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    padding: 60px 20px 60px calc((100vw - 996px) / 2);
+    top: 0;
+    left: 0;
+    height: 100%;
+    &-adr{
+      margin-top: 29px;
+      h3{
+        font-size: 30px;
+        font-family: Montserrat-Medium;
+        color: #FFFFFF;
+      }
+      .adress, .email, .phone{
+        margin-top: 20px;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+        font-family: Montserrat-Medium;
+        display: inline-block;
+        border-bottom: 1px solid white;
+      }
+      .adress-value{
+        font-size: 18px;
+        font-family: Montserrat-Medium;
+        display: block;
+        margin-top: 14px;
+        color: #FFFFFF;
+      }
+      .phone-value, .email-value{
+        margin-top: 14px;
+        display: block;
+        font-size: 24px;
+        font-family: Montserrat-Medium;
+        color: #FFFFFF;
+      }
+      .contacts-info__button{
+        display: inline-block;
+        margin-top: 22px;
+        padding: 12px 36px;
+        &:hover{
+          background-color: #F0DD45;
+          color: black;
+        }
+      }
+    }
+  }
+  &__copyright{
+    height: 110px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+      margin: 0 20px;
+      &:hover{
+        svg{
+          path{
+            fill: #FFFFFF;
+          }
+        }
+      }
+      svg{
+        path{
+          fill: #F0DD45;
+          transition: 0.3s;
+        }
       }
     }
   }
