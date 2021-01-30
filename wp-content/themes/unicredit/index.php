@@ -39,6 +39,9 @@ get_header();
             <?php get_sidebar('slider'); ?>
         </div>
     </section>
+    <section class="uni-calculate">
+        <?php echo do_shortcode(''); ?>
+    </section>
     <section class="uni-pluses">
         <div class="uni-pluses__title section-title">
             <?php the_field('zagoloyok_dlya_bloka_vygody',2);?>
@@ -139,7 +142,94 @@ get_header();
         </div>
     </section>
     <section class="uni-tabs">
-
+        <div class="uni-tabs__wrapper">
+            <div class="uni-tabs__swicher">
+                <div class="uni-tabs__navs">
+                    <?php
+                    $args = array(
+                        'post_type' => 'tabscredit',
+                        'showposts' => "", //сколько показать статей
+                        'orderby' => "data", //сортировка по дате
+                        'caller_get_posts' => 1);
+                    $my_query = new wp_query($args);
+                    $counter = 1;
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) {
+                            $my_query->the_post();
+                            ?>
+                            <?php if ($counter == 1){
+                                $DopClass = "active-tab";
+                            } else {
+                                $DopClass = "";
+                            }?>
+                            <div class="uni-tabs__navs-item  <?php echo $DopClass;?>" data-navid="<?php echo "nav-elem" . $counter;?>">
+                                <div class="uni-tabs__navs-img">
+                                    <img src="<?php echo the_field('ukazhite_ikonku_dlya_taby');?>" alt="<?php the_title();?>">
+                                </div>
+                                <h3><?php the_title();?></h3>
+                            </div>
+                            <?php $counter ++; ?>
+                        <?php }
+                    }
+                    wp_reset_query(); ?>
+                </div>
+                <div class="uni-tabs__content">
+                    <?php
+                    $args = array(
+                        'post_type' => 'tabscredit',
+                        'showposts' => "", //сколько показать статей
+                        'orderby' => "data", //сортировка по дате
+                        'caller_get_posts' => 1);
+                    $my_query = new wp_query($args);
+                    $counter = 1;
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) {
+                            $my_query->the_post();
+                            ?>
+                            <?php if ($counter == 1){
+                                $DopClass = "active-tab";
+                            } else {
+                                $DopClass = "";
+                            }?>
+                            <div class="uni-tabs__content-item <?php echo $DopClass?>" data-contid="<?php echo "nav-elem" . $counter;?>">
+                                <div class="left">
+                                    <div class="tabs-cont-item">
+                                        <span class="value-name">Сумма кредита</span>
+                                        <span class="value-digit"><?php echo the_field('summa_kredita_taba');?></span>
+                                    </div>
+                                    <div class="tabs-cont-item">
+                                        <span class="value-name">Срок кредита</span>
+                                        <span class="value-digit"><?php echo the_field('srok_kredita_taba');?></span>
+                                    </div>
+                                    <div class="tabs-cont-item">
+                                        <span class="value-name">Процентная ставка</span>
+                                        <span class="value-digit"><?php echo the_field('proczentnaya_stavka_taba');?></span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <?php the_content()?>
+                                </div>
+                            </div>
+                            <?php $counter ++; ?>
+                        <?php }
+                    }
+                    wp_reset_query(); ?>
+                </div>
+            </div>
+            <div class="uni-tabs__cart">
+                <div class="uni-tabs__cart-photo">
+                    <img src="<?php echo the_field('fotograffiya_sotrudnika',2);?>">
+                </div>
+                <div class="uni-tabs__cart-about">
+                    <div class="name"><?php the_field('imya_sotrudnika_dlya_bloka_s_tabami',2);?></div>
+                    <div class="work"><?php the_field('dolzhnost_sotrudnika_taby',2);?></div>
+                    <div class="text"><?php the_field('opisanie_pod_dolzhnostyu',2);?></div>
+                    <div class="phone"><?php echo get_theme_mod('phone'); ?></div>
+                    <div class="descript"><?php the_field('tekst_pod_nomerom_telefona',2);?></div>
+                    <div class="button button-green">Оставьте заявку</div>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="uni-economy">
         <div class="uni-economy__body">
@@ -180,11 +270,12 @@ get_header();
                         'orderby' => "data", //сортировка по дате
                         'caller_get_posts' => 1);
                     $my_query = new wp_query($args);
+                    $counter = 1;
                     if ($my_query->have_posts()) {
                         while ($my_query->have_posts()) {
                             $my_query->the_post();
                             ?>
-                            <div class="uni-question__item">
+                            <div class="uni-question__item <?php if($counter > 9){echo 'hidded-item';}?>" style="<?php if($counter > 9){echo 'display:none';}?>">
                                 <div class="uni-question__quest-head">
                                 <span class="quest-title">
                                     <?php the_title();?>
@@ -200,9 +291,20 @@ get_header();
                                     <?php the_content();?>
                                 </div>
                             </div>
+                            <?php $counter ++; ?>
+
                         <?php }
                     }
                     wp_reset_query(); ?>
+                </div>
+                <div class="uni-question__show-all">
+                    <span class="text">Весь список вопросов</span>
+                    <span>
+                        <svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.101 0.421723L11.9926 8.7538L0.884183 0.421723C0.676948 0.271579 0.346652 0.275907 0.14646 0.431334C-0.0487926 0.582982 -0.0487926 0.823367 0.14646 0.974979L11.6242 9.58331C11.828 9.73606 12.1582 9.73606 12.362 9.58331L23.8397 0.974979C24.047 0.824834 24.0527 0.57715 23.8526 0.421686C23.6524 0.26626 23.3221 0.261968 23.1148 0.412075C23.1105 0.41523 23.1062 0.418421 23.102 0.421686L23.101 0.421723Z" fill="black"/>
+                            <path d="M11.9936 9.69838C11.8551 9.69856 11.7223 9.65668 11.6242 9.58331L0.14646 0.974979C-0.0537327 0.819552 -0.0479655 0.572625 0.15927 0.422481C0.361468 0.276041 0.682034 0.275284 0.884183 0.421723L11.9926 8.7538L23.102 0.421686C23.3022 0.26626 23.6324 0.261991 23.8397 0.412099C24.0469 0.562243 24.0526 0.809929 23.8525 0.965392C23.8483 0.968657 23.8441 0.971824 23.8397 0.974979L12.362 9.58331C12.2643 9.65675 12.1318 9.69812 11.9936 9.69838Z" fill="black"/>
+                        </svg>
+                    </span>
                 </div>
             </div>
             <div class="uni-question__form">
