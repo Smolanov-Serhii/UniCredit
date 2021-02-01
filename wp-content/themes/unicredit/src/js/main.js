@@ -7,9 +7,13 @@ $(document ).ready(function() {
         var FirstElem = $("#Main-menu").width();
         $(".uni-header__wrapper").width(FirstElem);
     }
+    $( window ).resize(function() {
+        DublicateWidth();
+    });
 
     if ($('.uni-question__show-all').length){
         $( ".uni-question__show-all" ).click(function() {
+            $(this).toggleClass('showed-all');
             $('.uni-question__item.hidded-item').fadeToggle(0);
             $(".uni-question__quest").toggleClass('changed');
         });
@@ -17,7 +21,7 @@ $(document ).ready(function() {
 
     function QuestHeight(){
         var QuestHeight = $(".uni-question__background").height();
-        $(".uni-question__quest").css('height', QuestHeight);
+        $(".uni-question__quest").css('min-height', QuestHeight);
     }
 
     if ($('.uni-slider').length){

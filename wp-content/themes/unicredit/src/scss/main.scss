@@ -70,12 +70,18 @@ body{
   margin: auto;
   padding: 0 100px;
   width: 100%;
+  @media all and (max-width: 1300px) {
+    padding: 0 50px;
+  }
 }
 .uni-header{
   display: flex;
   flex-direction: column;
   &__top{
     background-color: #000000;
+    @media all and (max-width: 900px) {
+      display: none;
+    }
   }
   &__wrapper{
     display: flex;
@@ -86,9 +92,16 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media all and (max-width: 900px) {
+      flex-wrap: wrap;
+    }
   }
   &__location{
-
+    @media all and (max-width: 900px) {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
   }
   &__city{
     font-style: normal;
@@ -98,8 +111,14 @@ body{
     color: #FFFFFF;
     font-family: Montserrat-Medium;
     padding: 10px 0;
+    @media all and (max-width: 1300px) {
+      font-size: 12px;
+    }
   }
   &__section-nav{
+    @media all and (max-width: 900px) {
+      width: 100%;
+    }
     .menu-menyu-navigaczii-container{
       height: 100%;
     }
@@ -110,6 +129,9 @@ body{
       list-style: none;
       height: 100%;
       align-items: center;
+      @media all and (max-width: 900px) {
+        justify-content: space-between;
+      }
       .menu-item{
         margin-left: 30px;
         margin-bottom: 0;
@@ -120,20 +142,48 @@ body{
           font-style: normal;
           font-weight: 500;
           font-size: 14px;
-          line-height: 17px;
+          line-height: 120%;
           color: #FFFFFF;
           font-family: Montserrat-Medium;
           padding: 10px 0;
+          @media all and (max-width: 1300px) {
+            font-size: 12px;
+          }
+          @media all and (max-width: 1300px) {
+           display: block;
+          }
         }
       }
     }
   }
+  &__contacts{
+
+  }
   .contacts-info{
+    @media all and (max-width: 900px) {
+      display: none;
+    }
+    .uni-container{
+      flex-wrap: nowrap;
+    }
     .custom-logo-link{
       margin: 5px 0;
+      @media all and (max-width: 1100px) {
+        margin-right: 40px;
+      }
+      img{
+        width: 263px;
+        height: auto;
+        @media all and (max-width: 1100px) {
+          width: 200px;
+        }
+      }
     }
     &__button{
       padding: 11px 39px;
+      @media all and (max-width: 900px) {
+        padding: 11px 20px;
+      }
     }
     &__graph{
       text-align: center;
@@ -143,6 +193,9 @@ body{
         line-height: 29px;
         color: #000000;
         font-family: Montserrat-Bold;
+        @media all and (max-width: 1100px) {
+          font-size: 18px;
+        }
       }
       &-time{
         font-weight: 600;
@@ -150,6 +203,9 @@ body{
         line-height: 17px;
         color: #000000;
         font-family: Montserrat-SemiBold;
+        @media all and (max-width: 1100px) {
+          font-size: 12px;
+        }
       }
     }
     &__socials{
@@ -164,6 +220,9 @@ body{
           display: flex;
           justify-content: center;
           align-items: center;
+          @media all and (max-width: 1100px) {
+            margin-right: 15px;
+          }
           svg{
             height: 100%;
             width: auto;
@@ -177,6 +236,9 @@ body{
   }
   &__type{
     background-color: $yellow;
+    @media all and (max-width: 900px) {
+      display: none;
+    }
     .menu-menyu-produktov-container{
 
     }
@@ -188,16 +250,22 @@ body{
       .menu-item{
         margin: 0;
         padding: 9px 87vw * $px 10px 0;
+        @media all and (max-width: 1100px) {
+          padding: 9px 40vw * $px 10px 0;
+        }
         &:last-child{
           padding-right: 0;
         }
         a{
           font-weight: 500;
           font-size: 14px;
-          line-height: 17px;
+          line-height: 120%;
           color: #000000;
           font-family: Montserrat-Medium;
           transition: 0.3s;
+          @media all and (max-width: 1300px) {
+            font-size: 12px;
+          }
           &:hover{
             color: white;
           }
@@ -209,6 +277,9 @@ body{
 .uni-slider{
   height: 571px;
   position: relative;
+  @media all and (max-width: 900px) {
+    height: auto;
+  }
   &__items{
     margin: 0;
     list-style: none;
@@ -217,6 +288,9 @@ body{
     height: 100%;
     position: relative;
     overflow: hidden;
+    @media all and (max-width: 900px) {
+      height: 400px;
+    }
     .slick-dots{
       position: absolute;
       bottom: 0;
@@ -232,6 +306,11 @@ body{
         height: 17px;
         margin: 0 8px;
         cursor: pointer;
+        @media all and (max-width: 900px) {
+          height: 11px;
+          width: 11px;
+          margin: 0 5.5px;
+        }
         button{
           display: none;
         }
@@ -255,21 +334,52 @@ body{
   &__item{
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
+    background-position: top left;
     height: 100%;
+    position: relative;
+    @media all and (max-width: 600px) {
+      background-position: -160px top;
+    }
     &-title{
       display: flex;
       height: 100%;
-      padding: 50px calc(50% - 100px) 130px 100px;
+      padding: 50px calc(50% - 250px) 130px 100px;
       align-items: flex-end;
+      @media all and (max-width: 1350px) {
+        padding: 50px calc(50% - 30px) 130px 100px;
+      }
+      @media all and (max-width: 1300px) {
+        padding: 50px calc(50% - 30px) 130px 50px;
+      }
+      @media all and (max-width: 1200px) {
+        padding: 50px calc(30% - 50px) 60px 50px;
+      }
+      @media all and (max-width: 600px) {
+        padding: 50px 10px 60px 10px;
+      }
       p{
         margin: 0;
         font-style: normal;
         font-weight: bold;
         font-size: 40px;
-        line-height: 49px;
+        line-height: 122.5%;
         font-family: Montserrat-Bold;
         color: #FFFFFF;
+        @media all and (max-width: 1400px) {
+          font-size: 34px;
+        }
+        @media all and (max-width: 1200px) {
+          font-size: 90vw * $px;
+        }
+        @media all and (max-width: 600px) {
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+          font-size: 34px;
+        }
+        @media all and (max-width: 400px) {
+          font-size: 28vw * $pxm;
+        }
       }
     }
   }
@@ -280,6 +390,47 @@ body{
     width: 524px;
     @media all and (max-width: 1500px) {
       right: 100px;
+    }
+    @media all and (max-width: 1300px) {
+      right: 50px;
+    }
+
+    @media all and (max-width: 1200px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      display: none;
+      .widget{
+        width: auto;
+        max-width: 600px;
+      }
+    }
+    @media all and (max-width: 900px) {
+      position: static;
+      width: 100%;
+      display: block;
+      height: auto;
+      .widget{
+        width: auto;
+        max-width: none;
+      }
+    }
+    &-btn{
+      position: absolute;
+      left: 50px;
+      bottom: 80px;
+      display: none;
+      @media all and (max-width: 1200px) {
+        display: flex;
+      }
+      @media all and (max-width: 900px) {
+        display: none;
+      }
     }
     .widget{
       background: #F0DD45;
@@ -304,6 +455,9 @@ body{
             padding: 27px 37px;
             justify-content: space-between;
             margin-bottom: 0;
+            @media all and (max-width: 600px) {
+              padding: 27px 10px;
+            }
           }
           .title{
             font-weight: bold;
@@ -314,6 +468,9 @@ body{
             text-transform: uppercase;
             color: #000000;
             margin: auto;
+            @media all and (max-width: 600px) {
+              padding: 0 20px;
+            }
           }
           .subtitle{
             font-weight: 500;
@@ -323,9 +480,19 @@ body{
             text-align: center;
             color: #000000;
             margin: 6px auto 26px auto;
+            @media all and (max-width: 900px) {
+              width: 100%;
+            }
+            @media all and (max-width: 600px) {
+              padding: 0 20px;
+              font-size: 12px;
+            }
           }
           .wpcf7-form-control-wrap, #checker, #sendbutton{
             width: calc(50% - 12px);
+            @media all and (max-width: 600px) {
+              width: 100%;
+            }
           }
           .wpcf7-form-control-wrap{
             margin-bottom: 20px;
@@ -358,6 +525,10 @@ body{
             font-family: Montserrat-Regular;
             display: flex;
             align-items: center;
+            @media all and (max-width: 600px) {
+              padding: 0 15% 20px 0;
+              font-size: 10px;
+            }
           }
           input{
             width: 100%;
@@ -911,12 +1082,26 @@ body{
         }
       }
     }
-    .text{
+    .text-hide, .text-show{
       font-size: 12px;
       font-family: Montserrat-Medium;
       border-bottom: 1px solid black;
       margin-bottom: 9px;
-      transition: 0.3s;
+      transition: color 0.3s;
+    }
+    .text-show{
+      display: none;
+    }
+    &.showed-all{
+      .text-hide{
+        display: none;
+      }
+      .text-show{
+        display: block;
+      }
+      svg{
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -1300,6 +1485,7 @@ body{
         display: inline-block;
         margin-top: 22px;
         padding: 12px 36px;
+
         &:hover{
           background-color: #F0DD45;
           color: black;

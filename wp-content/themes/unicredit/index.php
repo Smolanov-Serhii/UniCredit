@@ -30,6 +30,9 @@ get_header();
                         <div class="uni-slider__item-title uni-container">
                             <?php the_field('zagolovok_dlya_slajda')?>
                         </div>
+                        <div class="uni-slider__form-btn js-slider-form button button-green">
+                            Заполнить заявку
+                        </div>
                     </li>
                 <?php }
             }
@@ -40,7 +43,58 @@ get_header();
         </div>
     </section>
     <section class="uni-calculate">
-        <?php echo do_shortcode(''); ?>
+        <div class="uni-calculate__tabs">
+            <div class="uni-calculate__tab-item active-calc-tab" data-min="10000" data-max="1000000" data-proc="9.5">
+                Кредит наличными
+            </div>
+            <div class="uni-calculate__tab-item" data-min="1000" data-max="100000" data-proc="12">
+                Рефинансирование
+            </div>
+            <div class="uni-calculate__tab-item" data-min="100000" data-max="10000000" data-proc="10.5">
+                Лизинг авто
+            </div>
+        </div>
+        <div class="uni-calculate__wrapper">
+            <div class="uni-calculate__left">
+                <div class="uni-calculate__row">
+                    <span class="first-title">Необходимая сумма</span>
+                    <span class="second-title">10 000 - 1 000 000 BUY</span>
+                    <input class="editable-box" type="text">
+                    <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000">
+                </div>
+                <div class="uni-calculate__row">
+                    <span class="first-title">Срок</span>
+                    <span class="second-title">1 год - 30 лет</span>
+                    <input class="editable-box" type="text">
+                    <input class="editable-slider" type="range" name="item-term" min="10" max="30" value="10000">
+                </div>
+                <select>
+                    <option>квартира</option>
+                    <option>машина</option>
+                </select>
+            </div>
+            <div class="uni-calculate__right">
+                <div class="uni-calculate__right-title">
+                    ваше предложение
+                </div>
+                <div class="uni-calculate__right-subtitle">
+                    Ежемесячный платёж
+                </div>
+                <div class="uni-calculate__right-pay">
+                    <span class="сюда месячный платёж">8 900</span>buy
+                </div>
+                <div class="ni-calculate__right-proc-desc">
+                    Процентная ставка
+                </div>
+                <div class="ni-calculate__right-proc-value">
+                    от <span id="data-proc">процент из data-proc</span>% годовых
+                </div>
+                <div class="button button-green js-do-calculate">Подробный расчёт</div>
+            </div>
+            <div class="calculate-table">
+                СЮДА ВЫГРУЗИТЬ ТАБЛИЦУ С РЕЗУЛЬТАТОМ ОПЛАТ
+            </div>
+        </div>
     </section>
     <section class="uni-pluses">
         <div class="uni-pluses__title section-title">
@@ -298,7 +352,8 @@ get_header();
                     wp_reset_query(); ?>
                 </div>
                 <div class="uni-question__show-all">
-                    <span class="text">Весь список вопросов</span>
+                    <span class="text-hide">Весь список вопросов</span>
+                    <span class="text-show">Скрыть список вопросов</span>
                     <span>
                         <svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23.101 0.421723L11.9926 8.7538L0.884183 0.421723C0.676948 0.271579 0.346652 0.275907 0.14646 0.431334C-0.0487926 0.582982 -0.0487926 0.823367 0.14646 0.974979L11.6242 9.58331C11.828 9.73606 12.1582 9.73606 12.362 9.58331L23.8397 0.974979C24.047 0.824834 24.0527 0.57715 23.8526 0.421686C23.6524 0.26626 23.3221 0.261968 23.1148 0.412075C23.1105 0.41523 23.1062 0.418421 23.102 0.421686L23.101 0.421723Z" fill="black"/>
