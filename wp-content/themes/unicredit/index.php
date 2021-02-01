@@ -184,7 +184,7 @@ get_header();
             wp_reset_query(); ?>
         </ul>
     </section>
-    <section class="uni-about">
+    <section class="uni-about" id="uni-about">
         <h2 class="uni-about__title section-title">
             <?php the_field('zagolovok_dlya_sekczii_pro_nas',2);?>
         </h2>
@@ -309,7 +309,7 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="uni-question">
+    <section class="uni-question" id="uni-question">
         <section class="uni-quize">
             <div class="uni-quize__wrapper">
                 <?php get_sidebar('quize'); ?>
@@ -400,7 +400,7 @@ get_header();
             <?php the_field('blok_logotipov',2);?>
         </h2>
     </section>
-    <section class="uni-brands">
+    <section class="uni-brands" id="uni-brands">
         <div class="uni-brands__wrapper swiper-container">
             <div class="uni-brands__list swiper-wrapper">
                 <?php

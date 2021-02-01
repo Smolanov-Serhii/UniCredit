@@ -3,6 +3,13 @@ html{
   font-size: 18px;
   line-height: 120%;
 }
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
 a{
   text-decoration: none;
   font-family: Montserrat-Regular;
@@ -154,7 +161,7 @@ table{
   font-family: Montserrat-Bold;
   font-weight: bold;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 121.4%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,6 +171,7 @@ table{
   border-radius: 4px;
   transition: 0.3s;
   box-shadow: none;
+
   &:hover{
     background-color: #065A47;
     color: white;

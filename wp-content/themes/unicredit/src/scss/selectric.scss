@@ -202,12 +202,12 @@ $selectric-font-size:       18px !default;                                      
     }
 
     &.highlighted {
-      background: #D0D0D0;
+      background: rgba(248,221,69,.4);
       color: #444;
     }
 
     &:hover {
-      background: #D5D5D5;
+      background: rgba(248,221,69,.2);
       color: #444;
     }
   }
