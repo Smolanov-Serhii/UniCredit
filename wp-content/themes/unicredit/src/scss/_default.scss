@@ -172,11 +172,31 @@ table{
 .section-title{
   font-weight: 500;
   font-size: 40px;
-  line-height: 49px;
+  line-height: 122.5%;
   color: #000000;
   font-family: Montserrat-Medium;
   margin: 60px auto;
   max-width: 1400px;
   padding: 0 100px;
   text-align: center;
+  @media all and (max-width: 1000px) {
+    padding: 0 50px;
+    font-size: 36px;
+    margin: 40px auto;
+  }
+  @media all and (max-width: 900px) {
+    font-size: 32px;
+    padding: 0;
+    margin: 30px auto;
+  }
+  @media all and (max-width: 660px) {
+    font-size: 24px;
+    margin: 20px auto;
+  }
+  @media all and (max-width: 500px) {
+    font-size: 18px;
+    font-family: Montserrat-Bold;
+    text-transform: uppercase;
+    max-width: 80%;
+  }
 }

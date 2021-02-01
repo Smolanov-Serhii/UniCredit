@@ -7,6 +7,25 @@ $(document ).ready(function() {
         var FirstElem = $("#Main-menu").width();
         $(".uni-header__wrapper").width(FirstElem);
     }
+
+    if ($('.uni-calculate').length){
+        $(function() {
+            $('.uni-calculate select').selectric();
+        });
+
+        if (  jQuery(window).width() <= 600 ) {
+            $('.uni-calculate__tabs').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: false,
+                arrows:true,
+                dots: false,
+                // centerMode: true
+            });
+        }
+
+    }
+
     $( window ).resize(function() {
         DublicateWidth();
     });

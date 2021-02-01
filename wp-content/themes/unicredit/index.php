@@ -59,19 +59,22 @@ get_header();
                 <div class="uni-calculate__row">
                     <span class="first-title">Необходимая сумма</span>
                     <span class="second-title">10 000 - 1 000 000 BUY</span>
-                    <input class="editable-box" type="text">
-                    <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000">
+                    <input class="editable-box" type="text" placeholder="1000000">
+                    <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
                     <span class="second-title">1 год - 30 лет</span>
-                    <input class="editable-box" type="text">
+                    <input class="editable-box" type="text" placeholder="1">
                     <input class="editable-slider" type="range" name="item-term" min="10" max="30" value="10000">
                 </div>
-                <select>
-                    <option>квартира</option>
-                    <option>машина</option>
-                </select>
+                <div class="uni-calculate__row">
+                    <span class="first-title">Обеспечение</span>
+                    <select>
+                        <option>квартира</option>
+                        <option>машина</option>
+                    </select>
+                </div>
             </div>
             <div class="uni-calculate__right">
                 <div class="uni-calculate__right-title">
@@ -83,17 +86,18 @@ get_header();
                 <div class="uni-calculate__right-pay">
                     <span class="сюда месячный платёж">8 900</span>buy
                 </div>
-                <div class="ni-calculate__right-proc-desc">
+                <div class="uni-calculate__right-proc-desc">
                     Процентная ставка
                 </div>
-                <div class="ni-calculate__right-proc-value">
-                    от <span id="data-proc">процент из data-proc</span>% годовых
+                <div class="uni-calculate__right-proc-value">
+                    от <span id="data-proc">9</span>% годовых <!--     процент из data-proc               -->
+
                 </div>
                 <div class="button button-green js-do-calculate">Подробный расчёт</div>
             </div>
-            <div class="calculate-table">
-                СЮДА ВЫГРУЗИТЬ ТАБЛИЦУ С РЕЗУЛЬТАТОМ ОПЛАТ
-            </div>
+        </div>
+        <div class="calculate-table">
+            СЮДА ВЫГРУЗИТЬ ТАБЛИЦУ С РЕЗУЛЬТАТОМ ОПЛАТ
         </div>
     </section>
     <section class="uni-pluses">

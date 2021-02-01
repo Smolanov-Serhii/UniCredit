@@ -20,6 +20,7 @@ const sass = require('gulp-sass');
 
 //Порядок подключения файлов со стилями
 const styleFiles = [
+   './src/scss/selectric.scss',
    './src/scss/main.scss',
    // './src/scss/swiper-bundle.scss'
 
@@ -31,6 +32,7 @@ const scriptFiles = [
    // './src/js/aos.js',
    './src/js/slick.js',
    './src/js/perfect-scrollbar.js',
+   './src/js/jquery.selectric.js',
    // './src/js/swiper-bundle.js',
    './src/js/main.js'
 ]
