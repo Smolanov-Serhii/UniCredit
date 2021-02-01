@@ -445,11 +445,11 @@ get_header();
                             $my_query->the_post();
                             ?>
                             <a href="<?php the_field('ssylka_na_otzyv_youtube');?>"
-                               class="uni-reviewes__video-item fresco"
-                               style="background-image: url(<?php echo the_field('kartinka_dlya_oblozhki');?>)">
+                               class="uni-reviewes__video-item fresco">
+                                <img class="bg-image" src="<?php echo the_field('kartinka_dlya_oblozhki');?>">
                                 <?php the_field('zagolovok_bloka_otzyvy');?>
                                 <span class="video-type"><?php the_field('opisanie_kredita');?></span>
-                                <img src="<?php echo get_template_directory_uri()?>/images/youtube-play.png">
+                                <img class="play-btn" src="<?php echo get_template_directory_uri()?>/images/youtube-play.png">
                                 <span class="video-name"><?php the_field('imya_polzovatelya');?></span>
                             </a>
                         <?php }

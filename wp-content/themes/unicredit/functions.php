@@ -567,19 +567,8 @@ function unicredit_widgets_init() {
             'description'   => esc_html__( 'Перенесите опросник сюда', 'unicredit' ),
             'before_widget' => '<section id="%1$s" class="quize %2$s">',
             'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        )
-    );
-    register_sidebar(
-        array(
-            'name'          => esc_html__( 'Калькулятор', 'unicredit' ),
-            'id'            => 'calculator',
-            'description'   => esc_html__( 'Перенесите калькулятор сюда', 'unicredit' ),
-            'before_widget' => '<section id="%1$s" class="calculator %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
+            'before_title'  => '<div class="widget-title">',
+            'after_title'   => '</div>',
         )
     );
 }

@@ -63,6 +63,9 @@
 body{
   margin: 0;
   padding: 0;
+  @media all and (max-width: 900px) {
+    padding-top: 60px;
+  }
 }
 
 .uni-container{
@@ -77,6 +80,93 @@ body{
 .uni-header{
   display: flex;
   flex-direction: column;
+  .mobile-item{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10px;
+    &__logo{
+      height: 100%;
+      width: auto;
+      img{
+        height: 100%;
+        width: auto;
+      }
+    }
+    &__wrapper{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+    }
+    &__menu{
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      background-color: white;
+      padding: 0 10px 20px 10px;
+      overflow: scroll;
+      height: calc(100vh - 60px);
+      .contacts-info__graph-phone{
+        padding-left: 30px;
+        margin-top: 30px;
+        display: block;
+      }
+      .socials__wrapper{
+        padding-left: 30px;
+        margin-top: 10px;
+        a{
+          margin-right: 10px;
+        }
+      }
+      .mobile-item__section-nav{
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(240,221,69,0.6);
+        &:first-child{
+          border-top: 1px solid rgba(240,221,69,0.6);
+        }
+        .menu{
+          margin-bottom: 0;
+          margin-left: 30px;
+          list-style: none;
+        }
+        li{
+          a{
+            color: black;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &__burger{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: #F0DD45;
+      border-radius: 4px;
+      padding: 12px 8px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      span{
+        width: 100%;
+        background-color: black;
+        border-radius: 1px;
+        height: 1px;
+      }
+    }
+    @media all and (max-width: 900px) {
+      display: flex;
+    }
+  }
   &__top{
     background-color: #000000;
     @media all and (max-width: 900px) {
@@ -352,7 +442,7 @@ body{
         padding: 50px calc(50% - 30px) 130px 50px;
       }
       @media all and (max-width: 1200px) {
-        padding: 50px calc(30% - 50px) 60px 50px;
+        padding: 50px calc(30% - 50px) 130px 50px;
       }
       @media all and (max-width: 600px) {
         padding: 50px 10px 60px 10px;
@@ -1015,9 +1105,9 @@ body{
       text-align: center;
       font-size: 14px;
       margin-bottom: 20px;
+      width: 100%;
     }
     @media all and (max-width: 400px) {
-      width: 100%;
       padding: 13px;
       margin-bottom: 10px;
     }
@@ -1028,6 +1118,10 @@ body{
   background-image: url("../../images/row-bg.jpg");
   background-position: top left;
   background-repeat: repeat;
+  @media all and (max-width: 600px) {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
   &__bottom-title{
     margin-bottom: 0;
   }
@@ -1038,6 +1132,15 @@ body{
     justify-content: space-between;
     margin: auto;
     align-items: flex-start;
+    @media all and (max-width: 1300px) {
+      padding: 0 50px;
+    }
+    @media all and (max-width: 850px) {
+      flex-wrap: wrap;
+    }
+    @media all and (max-width: 600px) {
+      padding: 0 10px;
+    }
   }
   &__form{
     width: 407px;
@@ -1045,8 +1148,22 @@ body{
     border: 2px solid #F0DD45;
     box-sizing: border-box;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
-    padding: 30px 51px  0px 51px;
+    padding: 30px 51px  20px 51px;
     text-align: center;
+    form{
+      > p{
+        margin-bottom: 0;
+      }
+    }
+    @media all and (max-width: 850px) {
+      width: 100%;
+    }
+    @media all and (max-width: 500px) {
+      padding: 30px 20px  0 20px;
+    }
+    @media all and (max-width: 500px) {
+      padding: 10px 10px  0 10px;
+    }
   }
   &__photo{
     border: 2px solid #F0DD45;
@@ -1071,6 +1188,9 @@ body{
     text-align: center;
     color: #000000;
     font-family: Montserrat-SemiBold;
+    @media all and (max-width: 500px) {
+      font-size: 20px;
+    }
   }
   &__work{
     margin-top: 8px;
@@ -1079,6 +1199,9 @@ body{
     line-height: 17px;
     text-align: center;
     color: #000000;
+    @media all and (max-width: 500px) {
+      font-size: 12px;
+    }
   }
   &__desc{
     margin-top: 22px;
@@ -1088,6 +1211,9 @@ body{
     text-align: center;
     color: #000000;
     font-family: Montserrat-SemiBold;
+    @media all and (max-width: 500px) {
+      font-size: 14px;
+    }
   }
   &__phone{
     font-weight: bold;
@@ -1099,12 +1225,15 @@ body{
     margin-top: 5px;
     margin-bottom: 3px;
     display: block;
+    @media all and (max-width: 500px) {
+      font-size: 24px;
+    }
   }
   .wc7{
     max-width: 100%;
     margin-top: 16px;
     .wpcf7-response-output{
-      margin: 0;
+      margin: 0 0 10px 0;
       padding: 0;
       font-size: 14px;
       line-height: 20px;
@@ -1115,15 +1244,22 @@ body{
     .button-green{
       border: none;
       width: 100%;
+      @media all and (max-width: 600px) {
+        padding: 13px 13px;
+      }
     }
-    .wpcf7-form-control-wrap{
+    .wpcf7-form-control-wrap, .wpcf7-not-valid-tip{
       width: 100%;
       position: relative;
       span{
         //position: absolute;
-        bottom: -10px;
+        display: block;
+        margin-top: -10px;
         width: 100%;
         font-size: 12px;
+        @media all and (max-width: 600px) {
+
+        }
       }
       input, textarea{
         background: #FFFFFF;
@@ -1174,13 +1310,18 @@ body{
     padding: 0;
     display: flex;
     flex-direction: column;
+    @media all and (max-width: 850px) {
+      width: 100%;
+      min-height: auto!important;
+      margin-bottom: 20px;
+    }
     &.changed{
       height: auto!important;
     }
     &-title{
       font-weight: 500;
-      font-size: 36px;
-      line-height: 44px;
+      font-size: 40px;
+      line-height: 110%;
       color: #000000;
       font-family: Montserrat-Medium;
       padding: 18px;
@@ -1189,10 +1330,28 @@ body{
       justify-content: center;
       align-items: center;
       background-color: #F0DD45;
+      @media all and (max-width: 800px) {
+        font-size: 32px;
+      }
+      @media all and (max-width: 600px) {
+        font-size: 24px;
+      }
+      @media all and (max-width: 500px) {
+        font-size: 18px;
+        font-family: Montserrat-Bold;
+        text-transform: uppercase;
+        padding: 13px 0 12px 0;
+      }
     }
     &-items{
       padding: 48px 56px 0px 56px;
       flex: 1;
+      @media all and (max-width: 950px) {
+        padding: 40px 20px;
+      }
+      @media all and (max-width: 600px) {
+        padding-bottom: 20px;
+      }
     }
     &-head{
       display: flex;
@@ -1218,6 +1377,9 @@ body{
         color: #000000;
         font-family: Montserrat-Medium;
         transition: 0.3s;
+        @media all and (max-width: 950px) {
+          width: calc(100% - 40px);
+        }
       }
     }
     &-answer{
@@ -1225,6 +1387,9 @@ body{
       padding-top: 0;
       overflow: hidden;
       max-height: 0;
+      @media all and (max-width: 950px) {
+        width: calc(100% - 40px);
+      }
       p{
         font-weight: 500;
         font-size: 14px;
@@ -1245,6 +1410,9 @@ body{
     padding: 20px 0;
     border-bottom: 1px solid #E0E0E0;
     cursor: pointer;
+    @media all and (max-width: 1150px) {
+      padding: 10px 0;
+    }
     &:hover{
       .quest-title{
         color: #41b718;
@@ -1271,6 +1439,9 @@ body{
     flex-direction: column;
     cursor: pointer;
     margin-bottom: 37px;
+    @media all and (max-width: 600px) {
+      margin-bottom: 20px;
+    }
     svg path{
       transition: 0.3s;
     }
@@ -1312,14 +1483,25 @@ body{
   border-top: 3px solid #F0DD45;
   border-bottom: 3px solid #F0DD45;
   position: relative;
+  overflow: hidden;
+  @media all and (max-width: 600px) {
+    border: none;
+  }
   &__list{
-    max-width: 1058px;
+    max-width: 1258px;
     margin: auto;
     position: relative;
+    padding: 0 100px;
+    @media all and (max-width: 1300px) {
+
+    }
+    @media all and (max-width: 500px) {
+      padding: 0 50px;
+    }
   }
   .slick-prev{
     position: absolute;
-    left: -60px;
+    left: 0;
     top: calc(50% - 30px);
     background-color: transparent;
     color: transparent;
@@ -1330,10 +1512,17 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    @media all and (max-width: 1350px) {
+      left: 50px;
+    }
+    @media all and (max-width: 600px) {
+      left: 10px;
+      width: 15px;
+    }
   }
   .slick-next{
     position: absolute;
-    right: -60px;
+    right: 0;
     top: calc(50% - 30px);
     background-color: transparent;
     color: transparent;
@@ -1344,6 +1533,13 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    @media all and (max-width: 1350px) {
+      right: 50px;
+    }
+    @media all and (max-width: 600px) {
+      right: 10px;
+      width: 15px;
+    }
   }
   .slick-slide{
     margin: 0 25px;
@@ -1354,12 +1550,18 @@ body{
     justify-content: center;
     align-items: center;
     margin: 70px auto;
+    @media all and (max-width: 600px) {
+      margin: 20px auto;
+    }
     img{
       width: auto;
       height: auto;
       margin: auto;
       opacity: 1!important;
       max-height: 79px;
+      @media all and (max-width: 1350px) {
+        max-width: 100%;
+      }
     }
   }
   .lazyload, .lazyloading{
@@ -1371,20 +1573,38 @@ body{
   background-position: top left;
   background-repeat: repeat;
   padding-bottom: 80px;
+  @media all and (max-width: 600px) {
+    padding-bottom: 20px;
+  }
   &__title{
     margin-top: 0;
     padding-top: 60px;
+    @media all and (max-width: 600px) {
+      padding-top: 20px;
+    }
   }
   &__wrapper{
-    width: 1208px;
+    max-width: 1208px;
     padding: 0 100px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media all and (max-width: 1300px) {
+      padding: 0 50px;
+    }
+    @media all and (max-width: 900px) {
+      padding: 0;
+    }
   }
   &__text{
     width: 62%;
+    @media all and (max-width: 900px) {
+      width: 100%;
+    }
+    .slick-slide{
+      padding: 0 10px;
+    }
     .ps-scrollbar-y-rail{
       background-color: #E7E7E7!important;
       opacity: 1;
@@ -1403,6 +1623,11 @@ body{
       overflow: scroll;
       position: relative;
       padding-right: 38px;
+      @media all and (max-width: 900px) {
+        height: auto;
+        overflow: auto;
+        padding-right: 0;
+      }
     }
     .wpmtst-testimonial{
       background: #FDFDFD;
@@ -1413,6 +1638,9 @@ body{
       padding: 35px 35px 22px 43px;
       margin-top: 35px;
       position: relative;
+      @media all and (max-width: 500px) {
+        padding: 20px;
+      }
       &:before{
         position: absolute;
         top: -25px;
@@ -1440,24 +1668,43 @@ body{
       .testimonial-content{
         p{
           font-size: 14px;
-          line-height: 19px;
+          line-height: 135%;
           text-align: justify;
           color: #000000;
           font-family: Montserrat-Regular;
           margin-bottom: 0;
           margin-top: 9px;
+          @media all and (max-width: 500px) {
+            font-size: 12px;
+          }
         }
       }
     }
   }
   &__video{
     width: calc(38% - 30px);
+    @media all and (max-width: 900px) {
+      width: 100%;
+    }
+    .slick-slide{
+      padding: 0 10px;
+      > div{
+        a{
+          display: flex!important;
+        }
+      }
+    }
     &-list{
       height: 522px;
       overflow: scroll;
       position: relative;
       padding-right: 34px;
       padding-top: 14px;
+      @media all and (max-width: 900px) {
+        height: auto;
+        overflow: auto;
+        padding-right: 0;
+      }
       .ps-scrollbar-y-rail{
         background-color: #E7E7E7!important;
         opacity: 1;
@@ -1484,13 +1731,21 @@ body{
       align-items: center;
       position: relative;
       margin-top: 20px;
-      img{
+      overflow: hidden;
+      .play-btn{
         width: 57px;
         height: auto;
         transition: 0.3s;
+        z-index: 3;
+      }
+      .bg-image{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
       }
       &:hover{
-        img{
+        .play-btn{
           transform: scale(1.2);
         }
       }
@@ -1523,8 +1778,24 @@ body{
     justify-content: space-between;
     margin-top: 60px;
     padding: 0 88px;
+    @media all and (max-width: 1100px) {
+      padding: 0 50px;
+      flex-wrap: wrap;
+    }
+    @media all and (max-width: 500px) {
+      padding: 0 10px;
+      margin: 40px 0 0 0;
+    }
     .button-green{
       padding: 13px 77px;
+      @media all and (max-width: 1000px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      @media all and (max-width: 450px) {
+        margin-bottom: 10px;
+        padding: 13px;
+      }
     }
     a{
       border: 2px solid #F0DD45;
@@ -1536,6 +1807,15 @@ body{
       min-width: 150px;
       width: auto;
       transition: 0.3s;
+      @media all and (max-width: 1000px) {
+        min-width: auto;
+        width: calc(33.3% - 13px);
+      }
+      @media all and (max-width: 450px) {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 42px;
+      }
       &:hover{
         border: 2px solid #41b718;
       }
@@ -1547,6 +1827,15 @@ body{
   padding: 0 100px;
   width: 100%;
   margin: 0 auto 80px auto;
+  @media all and (max-width: 1300px) {
+    padding: 0 50px;
+  }
+  @media all and (max-width: 850px) {
+    margin-bottom: 20px;
+  }
+  @media all and (max-width: 600px) {
+    padding: 0 10px;
+  }
   &__wrapper{
     background: #FDFDFD;
     border: 2px solid #F0DD45;
@@ -1558,20 +1847,65 @@ body{
     background-color: #F0DD45;
     padding: 10px 0 15px 0;
     text-align: center;
+    font-size: 40px;
+    font-family: Montserrat-Medium;
+    @media all and (max-width: 800px) {
+      font-size: 32px;
+    }
+    @media all and (max-width: 600px) {
+      font-size: 24px;
+    }
+    @media all and (max-width: 500px) {
+      font-size: 18px;
+      font-family: Montserrat-Bold;
+      text-transform: uppercase;
+      padding: 13px 0 12px;
+    }
   }
   .democracy{
     padding: 0 116px 40px 116px;
+    @media all and (max-width: 1100px) {
+      padding: 0 40px 40px 40px;
+    }
+    @media all and (max-width: 640px) {
+      padding: 0 20px 40px 20px;
+    }
+    @media all and (max-width: 500px) {
+      padding: 0 20px 20px 20px;
+    }
+    @media all and (max-width: 400px) {
+      padding: 0 10px 20px 10px;
+    }
     .dem-poll-title{
       margin: 30px auto 30px auto;
       text-align: center;
       font-family: Montserrat-SemiBold;
       font-size: 18px;
+      @media all and (max-width: 600px) {
+        margin: 20px auto 10px auto;
+      }
+    }
+    .dem-vote{
+      li{
+        &:last-child{
+          .dem__radio_label{
+            margin-bottom: 0;
+          }
+        }
+      }
     }
     .dem__radio_label{
       margin-bottom: 30px;
       display: flex;
       align-items: flex-start;
       cursor: pointer;
+      font-size: 18px;
+      line-height: 122%;
+      font-family: Montserrat-Medium;
+      @media all and (max-width: 600px) {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
       .dem__radio{
         display: none;
         &:checked + .dem__spot{
@@ -1613,6 +1947,9 @@ body{
       font-family: Montserrat-Medium;
       font-size: 18px;
       margin-bottom: 40px;
+      @media all and (max-width: 500px) {
+        margin-bottom: 20px;
+      }
     }
     div.dem-bottom{
       padding-bottom: 0;
@@ -1623,6 +1960,9 @@ body{
       input.dem-button{
         padding: 13px 87px;
         margin-bottom: 0;
+        @media all and (max-width: 600px) {
+          width: 100%;
+        }
       }
     }
 
@@ -1634,15 +1974,38 @@ body{
 .uni-footer{
   &__map{
     position: relative;
+    height: 572px;
+    @media all and (max-width: 1100px) {
+      display: flex;
+      min-height: 516px;
+      height: 522px;
+    }
+    @media all and (max-width: 800px) {
+      display: flex;
+      min-height: 476px;
+    }
+    @media all and (max-width: 600px) {
+      flex-wrap: wrap;
+      height: auto;
+    }
   }
   #map{
-    min-height: 572px;
-    max-height: 572px;
+    height: 100%;
     [class*="ymaps-2"][class*="-ground-pane"] {
       filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
       /* Firefox 3.5+ */
       -webkit-filter: grayscale(0.7);
       /* Chrome 19+ & Safari 6+ */
+    }
+    @media all and (max-width: 1100px) {
+      width: 50% !important;
+      order: 2;
+    }
+    @media all and (max-width: 600px) {
+      width: 100% !important;
+      height: 300vw * $pxm;
+      min-height: 300vw * $pxm;
+      max-height: 300vw * $pxm;
     }
   }
   &__content{
@@ -1654,21 +2017,57 @@ body{
     top: 0;
     left: 0;
     height: 100%;
+    &-logo{
+      @media all and (max-width: 600px) {
+        img{
+          max-width: 60%;
+        }
+      }
+    }
+    @media all and (max-width: 1100px) {
+      position: static;
+      order: 1;
+      text-align: center;
+      padding: 40px 10px;
+    }
+    @media all and (max-width: 600px) {
+      width: 100% !important;
+    }
+    @media all and (max-width: 500px) {
+      padding-bottom: 10px;
+      padding-top: 30px;
+    }
     &-adr{
       margin-top: 29px;
       h3{
         font-size: 30px;
         font-family: Montserrat-Medium;
         color: #FFFFFF;
+        @media all and (max-width: 1100px) {
+          font-size: 24px;
+        }
+        @media all and (max-width: 800px) {
+          font-size: 20px;
+        }
+        @media all and (max-width: 600px) {
+          font-size: 16px;
+        }
       }
       .adress, .email, .phone{
         margin-top: 20px;
         font-size: 24px;
-        line-height: 29px;
+        line-height: 120%;
         color: #FFFFFF;
         font-family: Montserrat-Medium;
         display: inline-block;
         border-bottom: 1px solid white;
+        @media all and (max-width: 800px) {
+          font-size: 22px;
+        }
+        @media all and (max-width: 600px) {
+          font-size: 16px;
+          margin-top: 10px;
+        }
       }
       .adress-value{
         font-size: 18px;
@@ -1676,6 +2075,12 @@ body{
         display: block;
         margin-top: 14px;
         color: #FFFFFF;
+        @media all and (max-width: 800px) {
+          font-size: 14px;
+        }
+        @media all and (max-width: 400px) {
+          font-size: 12px;
+        }
       }
       .phone-value, .email-value{
         margin-top: 14px;
@@ -1683,11 +2088,25 @@ body{
         font-size: 24px;
         font-family: Montserrat-Medium;
         color: #FFFFFF;
+        @media all and (max-width: 800px) {
+          font-size: 12px;
+        }
+        @media all and (max-width: 400px) {
+          font-size: 12px;
+        }
+      }
+      .phone-value{
+        @media all and (max-width: 400px) {
+          font-size: 16px;
+        }
       }
       .contacts-info__button{
         display: inline-block;
         margin-top: 22px;
         padding: 12px 36px;
+        @media all and (max-width: 600px) {
+          width: 100%;
+        }
 
         &:hover{
           background-color: #F0DD45;
@@ -1702,6 +2121,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    @media all and (max-width: 1100px) {
+      height: 50px;
+    }
     a{
       margin: 0 20px;
       &:hover{
@@ -1710,6 +2132,9 @@ body{
             fill: #FFFFFF;
           }
         }
+      }
+      @media all and (max-width: 600px) {
+        margin: 0 5px;
       }
       svg{
         path{
@@ -1731,6 +2156,18 @@ body{
     display: flex;
     justify-content: space-between;
     margin: auto;
+    flex-wrap: wrap;
+    @media all and (max-width: 1300px) {
+      padding: 50px 50px;
+    }
+    @media all and (max-width: 1100px) {
+
+    }
+    @media all and (max-width: 600px) {
+      padding: 0 10px;
+      margin-top: 10px;
+    }
+
   }
   &__cart{
     max-width: 407px;
@@ -1744,30 +2181,53 @@ body{
     display: flex;
     align-items: flex-end;
     padding: 47px 46px 47px 38px;
+    @media all and (max-width: 1100px) {
+      margin: 50px auto 0 auto;
+    }
+    @media all and (max-width: 500px) {
+      background-image: none;
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      padding: 10px;
+    }
     &-about{
       width: 100%;
       .name{
         font-size: 24px;
         font-family: Montserrat-SemiBold;
         text-align: center;
+        @media all and (max-width: 500px) {
+          font-size: 20px;
+        }
       }
       .work{
         margin-top: 12px;
         font-size: 14px;
         font-family: Montserrat-Regular;
         text-align: center;
+        @media all and (max-width: 500px) {
+          font-size: 12px;
+        }
       }
       .text{
         margin-top: 22px;
         font-size: 16px;
         font-family: Montserrat-SemiBold;
         text-align: center;
+        @media all and (max-width: 500px) {
+          font-size: 14px;
+        }
       }
       .phone{
         margin-top: 15px;
         text-align: center;
         font-family: Montserrat-SemiBold;
         font-size: 30px;
+        @media all and (max-width: 500px) {
+          font-size: 24px;
+        }
       }
       .descript{
         margin-top: 12px;
@@ -1781,14 +2241,21 @@ body{
     }
   }
   &__swicher{
-    max-width: 588px;
+    max-width: calc(100% - 430px);
     width: 100%;
+    @media all and (max-width: 1100px) {
+      max-width: none;
+    }
   }
   &__navs{
     height: 120px;
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
+    @media all and (max-width: 768px) {
+      height: auto;
+      flex-wrap: wrap;
+    }
     &-item{
       flex: 1;
       width: auto;
@@ -1801,6 +2268,11 @@ body{
       border-radius: 4px 4px 0px 0px;
       cursor: pointer;
       transition: 0.3s;
+      @media all and (max-width: 768px) {
+        width: 50%;
+        flex: auto;
+        padding: 10px;
+      }
       &.active-tab{
         background-color: #F0DD45;
         box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.2);
@@ -1817,6 +2289,9 @@ body{
         text-align: center;
         font-size: 12px;
         font-family: Montserrat-Medium;
+        @media all and (max-width: 500px) {
+          font-size: 10px;
+        }
       }
     }
     &-img{
@@ -1825,6 +2300,9 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
+      @media all and (max-width: 600px) {
+        width: auto;
+      }
       img{
         height: 100%;
         width: auto;
@@ -1861,6 +2339,9 @@ body{
       }
       .left, .right{
         width: 50%;
+        @media all and (max-width: 700px) {
+          width: 100%;
+        }
       }
       .left{
         display: flex;
@@ -1868,6 +2349,13 @@ body{
         justify-content: space-between;
         padding: 57px 0 57px 36px;
         height: auto;
+        @media all and (max-width: 700px) {
+          padding: 40px 20px 20px 40px;
+        }
+        @media all and (max-width: 700px) {
+          padding: 20px 20px 10px 20px;
+        }
+
         .tabs-cont-item{
           .value-name{
             font-size: 16px;
@@ -1888,6 +2376,12 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @media all and (max-width: 700px) {
+          padding: 20px 0 20px 40px;
+        }
+        @media all and (max-width: 700px) {
+          padding: 10px 20px 20px 20px;
+        }
         ul, ol{
           list-style: none;
           display: flex;
@@ -1928,6 +2422,10 @@ body{
     filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.1));
     border-radius: 50%;
     overflow: hidden;
+    @media all and (max-width: 500px) {
+      position: static;
+      margin-bottom: 20px;
+    }
     img{
       width: 100%;
       height: auto;
@@ -1949,6 +2447,7 @@ body{
   &__tabs{
     display: flex;
     justify-content: center;
+    overflow: hidden;
     .slick-arrow{
       background-color: transparent;
       border: none;
@@ -1989,7 +2488,7 @@ body{
         text-align: center;
       }
       @media all and (max-width: 600px) {
-        font-size: 24px;
+        font-size: 18px;
         border: none;
       }
       &:hover{
@@ -2044,6 +2543,9 @@ body{
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 8px;
+    @media all and (max-width: 500px) {
+      margin-bottom: 0;
+    }
     &:last-child{
       margin-bottom: 0;
     }
@@ -2059,6 +2561,9 @@ body{
       font-size: 18px;
       color: #000000;
       padding: 11px 30px;
+      @media all and (max-width: 500px) {
+        padding: 8px 30px;
+      }
       &::placeholder{
         color: #BFBFBF;
       }
@@ -2141,6 +2646,10 @@ body{
         width: 100%;
         text-align: center;
       }
+      @media all and (max-width: 500px) {
+        font-size: 14px;
+        font-family: Montserrat-Bold;
+      }
     }
     .second-title{
       font-size: 16px;
@@ -2150,10 +2659,16 @@ body{
         text-align: center;
         margin-top: 10px;
       }
+      @media all and (max-width: 500px) {
+        font-size: 14px;
+      }
     }
     select, .selectric-wrapper{
       width: 100%;
       margin-top: 7px;
+      .label{
+        height: 40px;
+      }
     }
 
   }
@@ -2196,6 +2711,9 @@ body{
       @media all and (max-width: 600px) {
         margin-top: 10px;
       }
+      @media all and (max-width: 500px) {
+        font-size: 14px;
+      }
     }
     &-proc-desc{
       font-size: 18px;
@@ -2207,6 +2725,10 @@ body{
       @media all and (max-width: 868px) {
         margin-top: 30px;
       }
+      @media all and (max-width: 500px) {
+        margin-top: 15px;
+        font-size: 14px;
+      }
     }
     &-proc-value{
       margin-top: 13px;
@@ -2217,9 +2739,10 @@ body{
     .button{
       padding: 13px;
       @media all and (max-width: 600px) {
-        padding: 18px;
-        font-size: 20px;
+        padding: 11px;
+        font-size: 14px;
       }
+
     }
   }
   .calculate-table{
