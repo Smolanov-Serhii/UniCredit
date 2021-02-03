@@ -59,14 +59,14 @@ get_header();
                 <div class="uni-calculate__row">
                     <span class="first-title">Необходимая сумма</span>
                     <span class="second-title">10 000 - 1 000 000 BUY</span>
-                    <input class="editable-box" type="text" placeholder="1000000">
+                    <input class="editable-box" type="text" placeholder="1000000" id='sum'  value='10000'>
                     <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
                     <span class="second-title">1 год - 30 лет</span>
-                    <input class="editable-box" type="text" placeholder="1">
-                    <input class="editable-slider" type="range" name="item-term" min="10" max="30" value="10000">
+                    <input class="editable-box" type="text" placeholder="1" id='term' value='1'>
+                    <input class="editable-slider" type="range" name="item-term" min="10" max="30" value="1" id=''>
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Обеспечение</span>
@@ -84,7 +84,7 @@ get_header();
                     Ежемесячный платёж
                 </div>
                 <div class="uni-calculate__right-pay">
-                    <span class="сюда месячный платёж">8 900</span>buy
+                    <span class="сюда месячный платёж" id='for_month'></span>buy
                 </div>
                 <div class="uni-calculate__right-proc-desc">
                     Процентная ставка
@@ -96,8 +96,9 @@ get_header();
                 <div class="button button-green js-do-calculate">Подробный расчёт</div>
             </div>
         </div>
-        <div class="calculate-table">
-            СЮДА ВЫГРУЗИТЬ ТАБЛИЦУ С РЕЗУЛЬТАТОМ ОПЛАТ
+        <div class="calculate-table" style="display: none">
+            <table id='calculate_table'>
+            </table>
         </div>
     </section>
     <section class="uni-pluses">

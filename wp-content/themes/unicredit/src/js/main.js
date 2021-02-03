@@ -247,6 +247,60 @@ $(document ).ready(function() {
 
     }
 
+
+    $('.uni-calculate__tab-item').on('click', function () {
+        $('.active-calc-tab').removeClass('active-calc-tab')
+        $(this).addClass('active-calc-tab');
+        $('#calculate_table').html('');
+        var i = $('.active-calc-tab').data('proc') * 1;
+        $('#data-proc').html(i);
+    })
+    $('.js-do-calculate').click(function () {
+        $('.calculate-table').fadeIn(300);
+        var s = $('#sum')[0].value*1;
+        var n = $('#term')[0].value*1;
+        var i = $('.active-calc-tab').data('proc') * 1;
+        var od = s
+        var dp;
+        var ms = [
+            'Январь',
+            'Февраль',
+            'Март',
+            'Апрель',
+            'Май',
+            'Июнь',
+            'Июль',
+            'Август',
+            'Сентябрь',
+            'Октябрь',
+            'Ноябрь',
+            'Декабрь',
+        ]
+        var html = '<tr><td>Месяц</td><td>Платежка</td><td>Осн. долг</td><td>Проценты</td><td>Доп. платежи</td><td>Остаток по долгу</td></tr>';
+        // var x = s*(p+(p/(Math.pow((1+p),t)-1)));
+
+        for(j = 1; j <= n; j++) {
+            var cd = (new Date);
+            var nd = cd.setMonth(cd.getMonth() + j);
+            var m = ms[(new Date(nd)).getMonth()];
+            var y = (new Date(nd)).getYear() + 1900;
+
+            pk = (od * ((i/100)/12));
+            dp = s/n + pk;
+            os = dp - pk;
+            od = od - dp + pk;
+
+            if(j == 1){
+                $('#for_month').html('' + parseInt(dp) + ' ');
+            }
+            html += '<tr><td>'+m+' '+y+'</td><td>'+dp.toFixed(2)+'</td><td>'+os.toFixed(2)+'</td><td>'+pk.toFixed(2)+'</td><td>0.00</td><td>'+od.toFixed(2)+'</td></tr>'
+
+        }
+        $('#calculate_table').html(html)
+
+    })
+
+
 });
 
 
