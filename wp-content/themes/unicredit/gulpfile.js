@@ -13,7 +13,7 @@ const del = require('del');
 //Синхронизация с браузером
 const browserSync = require('browser-sync').create();
 //Для препроцессоров стилей
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 //Sass препроцессор
 const sass = require('gulp-sass');
 
@@ -27,12 +27,12 @@ const styleFiles = [
 ]
 //Порядок подключения js файлов
 const scriptFiles = [
-   './src/js/jquery-3.5.1.js',
+   // './src/js/jquery-3.5.1.js',
    './src/js/fresco.min.js',
    // './src/js/aos.js',
-   './src/js/slick.js',
-   './src/js/perfect-scrollbar.js',
-   './src/js/jquery.selectric.js',
+   // './src/js/slick.js',
+   // './src/js/perfect-scrollbar.js',
+   // './src/js/jquery.selectric.js',
    // './src/js/swiper-bundle.js',
    './src/js/main.js'
 ]
@@ -42,7 +42,7 @@ gulp.task('sass', () => {
    //Шаблон для поиска файлов CSS
    //Всей файлы по шаблону './src/css/**/*.css'
    return gulp.src(styleFiles)
-      .pipe(sourcemaps.init())
+      // .pipe(sourcemaps.init())
       //Указать stylus() , sass() или less()
       .pipe(sass())
       //Объединение файлов в один
@@ -56,7 +56,7 @@ gulp.task('sass', () => {
       .pipe(cleanCSS({
          level: 2
       }))
-      .pipe(sourcemaps.write('./'))
+      // .pipe(sourcemaps.write('./'))
       //Выходная папка для стилей
       .pipe(gulp.dest('./dist/css'))
       .pipe(browserSync.stream());

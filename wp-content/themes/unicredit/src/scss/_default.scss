@@ -1,5 +1,6 @@
 html{
-  font-family: Montserrat-Regular;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 120%;
 }
@@ -12,7 +13,8 @@ html{
 
 a{
   text-decoration: none;
-  font-family: Montserrat-Regular;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 ul, ol{
 
@@ -21,7 +23,8 @@ pre{
   white-space: break-spaces;
 }
 p, pre{
-  font-family: Montserrat-Regular;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.5em;
   margin-bottom: 0.9em;
@@ -39,7 +42,8 @@ p, pre{
   }
 }
 h1{
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 48px;
   @media all and (max-width: 1200px) {
     font-size: 40px;
@@ -69,7 +73,8 @@ em{
   font-style: italic;
 }
 h2{
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   font-size: 42px;
   @media all and (max-width: 1200px) {
     font-size: 34px;
@@ -85,26 +90,30 @@ h2{
   }
 }
 h3{
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 36px;
 }
 h4{
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 30px;
 }
 h5{
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 24px;
 }
 h6{
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 18px;
 }
 a.button{
   background-color: #41B718!important;
-  font-family: Montserrat-Bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   text-transform: uppercase;
@@ -124,12 +133,13 @@ a{
 }
 table{
   th{
-    font-family: Montserrat-SemiBold;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f8e688;
     font-weight: 600;
   }
   td{
-    font-family: Montserrat-Regular;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
   }
   th, td{
     font-style: normal;
@@ -169,8 +179,8 @@ table{
 
 .button-green, #sendbutton, .dem-button {
   background-color: $green;
-  font-family: Montserrat-Bold;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 14px;
   line-height: 121.4%;
   display: flex;
@@ -189,11 +199,11 @@ table{
   }
 }
 .section-title{
-  font-weight: 500;
   font-size: 40px;
   line-height: 122.5%;
   color: #000000;
-  font-family: Montserrat-Medium;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   margin: 60px auto;
   max-width: 1400px;
   padding: 0 100px;
@@ -214,7 +224,8 @@ table{
   }
   @media all and (max-width: 500px) {
     font-size: 18px;
-    font-family: Montserrat-Bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     max-width: 80%;
   }

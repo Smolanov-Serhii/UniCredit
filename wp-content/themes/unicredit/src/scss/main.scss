@@ -7,55 +7,55 @@
 @import "perfect-scrollbar";
 
 
-@font-face {
-  font-family: 'Montserrat-Bold';
-  src: url("../../fonts/Montserrat-Bold.ttf") format("truetype");
-  src: url('../../fonts/Montserrat-Bold.eot');
-  src: url('../../fonts/Montserrat-Bold.eot?iefix') format('eot'),
-  url('../../fonts/Montserrat-Bold.woff2') format('woff2'),
-  url('../../fonts/Montserrat-Bold.woff') format('woff');
-}
+//@font-face {
+//  font-family: 'Montserrat-Bold';
+//  src: url("../../fonts/Montserrat-Bold.ttf") format("truetype");
+//  src: url('../../fonts/Montserrat-Bold.eot');
+//  src: url('../../fonts/Montserrat-Bold.eot?iefix') format('eot'),
+//  url('../../fonts/Montserrat-Bold.woff2') format('woff2'),
+//  url('../../fonts/Montserrat-Bold.woff') format('woff');
+//}
 
-@font-face {
-  font-family: 'Montserrat-Light';
-  src: url("../../fonts/Montserrat-Light.ttf") format("truetype");
-  src: url('../../fonts/Montserrat-Light.eot');
-  src: url('../../fonts/Montserrat-Light.eot?iefix') format('eot'),
-  url('../../fonts/Montserrat-Light.woff2') format('woff2'),
-  url('../../fonts/Montserrat-Light.woff') format('woff');
-}
+//@font-face {
+//  font-family: 'Montserrat-Light';
+//  src: url("../../fonts/Montserrat-Light.ttf") format("truetype");
+//  src: url('../../fonts/Montserrat-Light.eot');
+//  src: url('../../fonts/Montserrat-Light.eot?iefix') format('eot'),
+//  url('../../fonts/Montserrat-Light.woff2') format('woff2'),
+//  url('../../fonts/Montserrat-Light.woff') format('woff');
+//}
 
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../../fonts/Montserrat-Medium.ttf") format("truetype");
-  src: url('../../fonts/Montserrat-Medium.eot');
-  src: url('../../fonts/Montserrat-Medium.eot?iefix') format('eot'),
-  url('../../fonts/Montserrat-Medium.woff2') format('woff2'),
-  url('../../fonts/Montserrat-Medium.woff') format('woff');
-}
+//@font-face {
+//  font-family: 'Montserrat-Medium';
+//  src: url("../../fonts/Montserrat-Medium.ttf") format("truetype");
+//  src: url('../../fonts/Montserrat-Medium.eot');
+//  src: url('../../fonts/Montserrat-Medium.eot?iefix') format('eot'),
+//  url('../../fonts/Montserrat-Medium.woff2') format('woff2'),
+//  url('../../fonts/Montserrat-Medium.woff') format('woff');
+//}
 
-@font-face {
-  font-family: 'Montserrat-Regular';
-  src: url("../../fonts/Montserrat-Regular.ttf") format("truetype");
-  src: url('../../fonts/Montserrat-Regular.eot');
-  src: url('../../fonts/Montserrat-Regular.eot?iefix') format('eot'),
-  url('../../fonts/Montserrat-Regular.woff2') format('woff2'),
-  url('../../fonts/Montserrat-Regular.woff') format('woff');
-}
+//@font-face {
+//  font-family: 'Montserrat-Regular';
+//  src: url("../../fonts/Montserrat-Regular.ttf") format("truetype");
+//  src: url('../../fonts/Montserrat-Regular.eot');
+//  src: url('../../fonts/Montserrat-Regular.eot?iefix') format('eot'),
+//  url('../../fonts/Montserrat-Regular.woff2') format('woff2'),
+//  url('../../fonts/Montserrat-Regular.woff') format('woff');
+//}
 
-@font-face {
-  font-family: 'Montserrat-SemiBold';
-  src: url("../../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  src: url('../../fonts/Montserrat-SemiBold.eot');
-  src: url('../../fonts/Montserrat-SemiBold.eot?iefix') format('eot'),
-  url('../../fonts/Montserrat-SemiBold.woff2') format('woff2'),
-  url('../../fonts/Montserrat-SemiBold.woff') format('woff');
-}
+//@font-face {
+//  font-family: 'Montserrat-SemiBold';
+//  src: url("../../fonts/Montserrat-SemiBold.ttf") format("truetype");
+//  src: url('../../fonts/Montserrat-SemiBold.eot');
+//  src: url('../../fonts/Montserrat-SemiBold.eot?iefix') format('eot'),
+//  url('../../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+//  url('../../fonts/Montserrat-SemiBold.woff') format('woff');
+//}
 
-@font-face {
-  font-family: 'Montserrat-Black';
-  src: url("../../fonts/Montserrat-Black.ttf") format("truetype");
-}
+//@font-face {
+//  font-family: 'Montserrat-Black';
+//  src: url("../../fonts/Montserrat-Black.ttf") format("truetype");
+//}
 *{
   box-sizing: border-box;
 }
@@ -195,11 +195,11 @@ body{
   }
   &__city{
     font-style: normal;
-    font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
-    font-family: Montserrat-Medium;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     padding: 10px 0;
     @media all and (max-width: 1300px) {
       font-size: 12px;
@@ -230,11 +230,11 @@ body{
         }
         a{
           font-style: normal;
-          font-weight: 500;
           font-size: 14px;
           line-height: 120%;
           color: #FFFFFF;
-          font-family: Montserrat-Medium;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
           padding: 10px 0;
           @media all and (max-width: 1300px) {
             font-size: 12px;
@@ -278,11 +278,11 @@ body{
     &__graph{
       text-align: center;
       &-phone{
-        font-weight: bold;
         font-size: 24px;
         line-height: 29px;
         color: #000000;
-        font-family: Montserrat-Bold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         @media all and (max-width: 1100px) {
           font-size: 18px;
         }
@@ -292,7 +292,8 @@ body{
         font-size: 14px;
         line-height: 17px;
         color: #000000;
-        font-family: Montserrat-SemiBold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
         @media all and (max-width: 1100px) {
           font-size: 12px;
         }
@@ -347,11 +348,11 @@ body{
           padding-right: 0;
         }
         a{
-          font-weight: 500;
           font-size: 14px;
           line-height: 120%;
           color: #000000;
-          font-family: Montserrat-Medium;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
           transition: 0.3s;
           @media all and (max-width: 1300px) {
             font-size: 12px;
@@ -379,7 +380,10 @@ body{
     position: relative;
     overflow: hidden;
     @media all and (max-width: 900px) {
-      height: 400px;
+      height: 306px; //400
+    }
+    @media all and (max-width: 500px) {
+      height: 306vw * $pxm;
     }
     .slick-dots{
       position: absolute;
@@ -427,6 +431,18 @@ body{
     background-position: top left;
     height: 100%;
     position: relative;
+    picture{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
     @media all and (max-width: 600px) {
       background-position: -160px top;
     }
@@ -450,10 +466,10 @@ body{
       p{
         margin: 0;
         font-style: normal;
-        font-weight: bold;
         font-size: 40px;
         line-height: 122.5%;
-        font-family: Montserrat-Bold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: #FFFFFF;
         @media all and (max-width: 1400px) {
           font-size: 34px;
@@ -537,7 +553,8 @@ body{
             margin-top: 0;
             font-size: 12px;
             line-height: 16px;
-            font-family: Montserrat-Regular;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
           }
           p{
             display: flex;
@@ -550,8 +567,8 @@ body{
             }
           }
           .title{
-            font-weight: bold;
-            font-family: Montserrat-Bold;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 16px;
             line-height: 20px;
             text-align: center;
@@ -563,8 +580,8 @@ body{
             }
           }
           .subtitle{
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
-            font-family: Montserrat-Medium;
             font-size: 14px;
             line-height: 17px;
             text-align: center;
@@ -594,7 +611,8 @@ body{
               position: absolute;
               font-size: 9px;
               line-height: 16px;
-              font-family: Montserrat-Regular;
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 400;
               bottom: -16px;
               width: 100%;
               left: 0;
@@ -618,7 +636,8 @@ body{
             font-size: 9px;
             line-height: 16px;
             color: #000000;
-            font-family: Montserrat-Regular;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
             display: flex;
             align-items: center;
             @media all and (max-width: 600px) {
@@ -628,12 +647,12 @@ body{
           }
           input{
             width: 100%;
-            font-weight: 500;
             font-size: 14px;
             line-height: 17px;
             text-align: left;
             color: #000000;
-            font-family: Montserrat-Medium;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             background: #FFFFFF;
             border: 0.5px solid #E9D117;
             box-sizing: border-box;
@@ -641,12 +660,12 @@ body{
             border-radius: 4px;
             padding: 12px 5px 13px 15px;
             &::placeholder{
-              font-weight: 500;
               font-size: 14px;
               line-height: 17px;
               text-align: left;
               color: #B8B8B8;
-              font-family: Montserrat-Medium;
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 500;
             }
           }
         }
@@ -729,11 +748,11 @@ body{
       width: calc(100% - 60px);
       padding: 0 26px;
       text-align: center;
-      font-weight: 500;
       font-size: 14px;
       line-height: 17px;
       color: #000000;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       @media all and (max-width: 1000px) {
         width: 100%;
         font-size: 12px;
@@ -811,7 +830,7 @@ body{
       font-weight: 600;
       font-size: 16px;
       line-height: 125%;
-      font-family: Montserrat-SemiBold;
+      font-family: 'Montserrat', sans-serif;
       text-align: center;
       text-transform: uppercase;
       color: #000000;
@@ -852,18 +871,18 @@ body{
       flex-direction: column;
       align-items: center;
       .digit{
-        font-weight: 500;
         font-size: 24px;
         line-height: 29px;
         text-align: center;
         color: #000000;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         @media all and (max-width: 900px) {
           font-size: 18px;
         }
       }
       span{
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;
@@ -935,13 +954,14 @@ body{
       }
     }
     p{
-      font-family: Montserrat-Regular;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
       strong{
-        font-weight: 500;
         font-size: 20px;
         line-height: 24px;
         color: #FFFFFF;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
       }
     }
     ol, ul{
@@ -953,9 +973,9 @@ body{
         justify-content: space-between;
       }
       li{
-        font-family: Montserrat-Light;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
         font-style: normal;
-        font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         color: #FFFFFF;
@@ -1046,11 +1066,11 @@ body{
   }
   &__title{
     font-style: normal;
-    font-weight: bold;
     font-size: 56px;
     line-height: 121.4%;
     color: #000000;
-    font-family: Montserrat-Bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     margin-bottom: 29px;
     @media all and (max-width: 800px) {
       font-size: 40px;
@@ -1069,7 +1089,7 @@ body{
       font-size: 50px;
       line-height: 122%;
       color: #000000;
-      font-family: Montserrat-SemiBold;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       @media all and (max-width: 800px) {
         font-size: 35px;
@@ -1080,9 +1100,9 @@ body{
       }
       strong{
         color: #F0DD45;
-        font-family: Montserrat-Black;
-        font-style: normal;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 900;
+        font-style: normal;
         font-size: 52px;
         line-height: 63px;
         text-transform: uppercase;
@@ -1115,7 +1135,7 @@ body{
 }
 .uni-question{
   padding: 60px 0 60px 0;
-  background-image: url("../../images/row-bg.jpg");
+  background-image: url("../../images/zig.svg");
   background-position: top left;
   background-repeat: repeat;
   @media all and (max-width: 600px) {
@@ -1187,14 +1207,15 @@ body{
     line-height: 29px;
     text-align: center;
     color: #000000;
-    font-family: Montserrat-SemiBold;
+    font-family: 'Montserrat', sans-serif;
     @media all and (max-width: 500px) {
       font-size: 20px;
     }
   }
   &__work{
     margin-top: 8px;
-    font-family: Montserrat-Regular;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
@@ -1210,17 +1231,17 @@ body{
     line-height: 20px;
     text-align: center;
     color: #000000;
-    font-family: Montserrat-SemiBold;
+    font-family: 'Montserrat', sans-serif;
     @media all and (max-width: 500px) {
       font-size: 14px;
     }
   }
   &__phone{
-    font-weight: bold;
     font-size: 30px;
     line-height: 37px;
     text-align: center;
-    font-family: Montserrat-Bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #000000;
     margin-top: 5px;
     margin-bottom: 3px;
@@ -1271,7 +1292,8 @@ body{
         font-size: 14px;
         line-height: 17px;
         color: #000000;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         padding: 12px 21px;
         width: 100%;
         margin-bottom: 12px;
@@ -1287,7 +1309,8 @@ body{
   }
   .devider{
     font-size: 14px;
-    font-family: Montserrat-SemiBold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     margin-bottom: 11px;
   }
   &__desc2{
@@ -1296,7 +1319,7 @@ body{
     line-height: 22px;
     text-align: center;
     color: #000000;
-    font-family: Montserrat-SemiBold;
+    font-family: 'Montserrat', sans-serif;
     width: 80%;
     margin: 11px auto 0 auto;
   }
@@ -1319,11 +1342,11 @@ body{
       height: auto!important;
     }
     &-title{
-      font-weight: 500;
       font-size: 40px;
       line-height: 110%;
       color: #000000;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       padding: 18px;
       width: 100%;
       display: flex;
@@ -1338,7 +1361,8 @@ body{
       }
       @media all and (max-width: 500px) {
         font-size: 18px;
-        font-family: Montserrat-Bold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         text-transform: uppercase;
         padding: 13px 0 12px 0;
       }
@@ -1371,11 +1395,11 @@ body{
       }
       .quest-title{
         width: calc(100% - 62px);
-        font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         color: #000000;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         transition: 0.3s;
         @media all and (max-width: 950px) {
           width: calc(100% - 40px);
@@ -1391,11 +1415,11 @@ body{
         width: calc(100% - 40px);
       }
       p{
-        font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         color: #000000;
-        font-family: Montserrat-Light;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
         &:last-child{
           margin-bottom: 0;
         }
@@ -1458,7 +1482,8 @@ body{
     }
     .text-hide, .text-show{
       font-size: 12px;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       border-bottom: 1px solid black;
       margin-bottom: 9px;
       transition: color 0.3s;
@@ -1569,7 +1594,7 @@ body{
   }
 }
 .uni-reviewes{
-  background-image: url("../../images/row-bg.jpg");
+  background-image: url("../../images/zig.svg");
   background-position: top left;
   background-repeat: repeat;
   padding-bottom: 80px;
@@ -1663,7 +1688,7 @@ body{
         line-height: 22px;
         text-align: right;
         color: #000000;
-        font-family: Montserrat-SemiBold;
+        font-family: 'Montserrat', sans-serif;
       }
       .testimonial-content{
         p{
@@ -1671,7 +1696,8 @@ body{
           line-height: 135%;
           text-align: justify;
           color: #000000;
-          font-family: Montserrat-Regular;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 400;
           margin-bottom: 0;
           margin-top: 9px;
           @media all and (max-width: 500px) {
@@ -1757,7 +1783,8 @@ body{
         left: 0;
         font-size: 14px;
         color: white;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
       }
       .video-name{
         position: absolute;
@@ -1765,7 +1792,8 @@ body{
         left: 0;
         width: 100%;
         text-align: center;
-        font-family: Montserrat-Bold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         font-size: 18px;
         color: white;
       }
@@ -1848,7 +1876,8 @@ body{
     padding: 10px 0 15px 0;
     text-align: center;
     font-size: 40px;
-    font-family: Montserrat-Medium;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     @media all and (max-width: 800px) {
       font-size: 32px;
     }
@@ -1857,7 +1886,8 @@ body{
     }
     @media all and (max-width: 500px) {
       font-size: 18px;
-      font-family: Montserrat-Bold;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       text-transform: uppercase;
       padding: 13px 0 12px;
     }
@@ -1879,7 +1909,8 @@ body{
     .dem-poll-title{
       margin: 30px auto 30px auto;
       text-align: center;
-      font-family: Montserrat-SemiBold;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       font-size: 18px;
       @media all and (max-width: 600px) {
         margin: 20px auto 10px auto;
@@ -1901,7 +1932,8 @@ body{
       cursor: pointer;
       font-size: 18px;
       line-height: 122%;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       @media all and (max-width: 600px) {
         font-size: 14px;
         margin-bottom: 20px;
@@ -1944,7 +1976,8 @@ body{
       }
     }
     ul.dem-vote{
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       font-size: 18px;
       margin-bottom: 40px;
       @media all and (max-width: 500px) {
@@ -2041,7 +2074,8 @@ body{
       margin-top: 29px;
       h3{
         font-size: 30px;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         color: #FFFFFF;
         @media all and (max-width: 1100px) {
           font-size: 24px;
@@ -2058,7 +2092,8 @@ body{
         font-size: 24px;
         line-height: 120%;
         color: #FFFFFF;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         display: inline-block;
         border-bottom: 1px solid white;
         @media all and (max-width: 800px) {
@@ -2071,7 +2106,8 @@ body{
       }
       .adress-value{
         font-size: 18px;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         display: block;
         margin-top: 14px;
         color: #FFFFFF;
@@ -2086,7 +2122,8 @@ body{
         margin-top: 14px;
         display: block;
         font-size: 24px;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         color: #FFFFFF;
         @media all and (max-width: 800px) {
           font-size: 12px;
@@ -2146,7 +2183,7 @@ body{
   }
 }
 .uni-tabs{
-  background-image: url("../../images/row-bg.jpg");
+  background-image: url("../../images/zig.svg");
   background-position: top left;
   background-repeat: repeat;
   &__wrapper{
@@ -2196,7 +2233,8 @@ body{
       width: 100%;
       .name{
         font-size: 24px;
-        font-family: Montserrat-SemiBold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
         text-align: center;
         @media all and (max-width: 500px) {
           font-size: 20px;
@@ -2205,7 +2243,8 @@ body{
       .work{
         margin-top: 12px;
         font-size: 14px;
-        font-family: Montserrat-Regular;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
         text-align: center;
         @media all and (max-width: 500px) {
           font-size: 12px;
@@ -2214,7 +2253,8 @@ body{
       .text{
         margin-top: 22px;
         font-size: 16px;
-        font-family: Montserrat-SemiBold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
         text-align: center;
         @media all and (max-width: 500px) {
           font-size: 14px;
@@ -2223,7 +2263,8 @@ body{
       .phone{
         margin-top: 15px;
         text-align: center;
-        font-family: Montserrat-SemiBold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
         font-size: 30px;
         @media all and (max-width: 500px) {
           font-size: 24px;
@@ -2232,7 +2273,8 @@ body{
       .descript{
         margin-top: 12px;
         font-size: 14px;
-        font-family: Montserrat-SemiBold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
         text-align: center;
       }
       .button{
@@ -2288,7 +2330,8 @@ body{
         display: block;
         text-align: center;
         font-size: 12px;
-        font-family: Montserrat-Medium;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         @media all and (max-width: 500px) {
           font-size: 10px;
         }
@@ -2359,14 +2402,16 @@ body{
         .tabs-cont-item{
           .value-name{
             font-size: 16px;
-            font-family: Montserrat-Medium;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             display: block;
           }
           .value-digit{
             display: block;
             margin-top: 7px;
             font-size: 18px;
-            font-family: Montserrat-Bold;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
           }
         }
       }
@@ -2392,7 +2437,8 @@ body{
         }
         li, p{
           font-size: 14px;
-          font-family: Montserrat-Medium;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
@@ -2479,7 +2525,8 @@ body{
       align-items: center;
       justify-content: center;
       padding: 24px 10px 23px 10px;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       font-size: 20px;
       cursor: pointer;
       transition: 0.3s;
@@ -2557,7 +2604,8 @@ body{
       box-sizing: border-box;
       box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.15), inset 0px 1px 4px rgba(0, 0, 0, 0.15);
       border-radius: 4px;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       font-size: 18px;
       color: #000000;
       padding: 11px 30px;
@@ -2640,7 +2688,8 @@ body{
       background: rgba(196,196,196,0.4);
     }
     .first-title{
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       font-size: 20px;
       @media all and (max-width: 660px) {
         width: 100%;
@@ -2648,12 +2697,14 @@ body{
       }
       @media all and (max-width: 500px) {
         font-size: 14px;
-        font-family: Montserrat-Bold;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
       }
     }
     .second-title{
       font-size: 16px;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       @media all and (max-width: 660px) {
         width: 100%;
         text-align: center;
@@ -2682,7 +2733,8 @@ body{
     }
     &-title{
       font-size: 18px;
-      font-family: Montserrat-Bold;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       text-transform: uppercase;
       @media all and (max-width: 868px) {
         margin-top: 30px;
@@ -2690,7 +2742,8 @@ body{
     }
     &-subtitle{
       font-size: 14px;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       margin-top: 16px;
     }
     &-pay{
@@ -2702,7 +2755,8 @@ body{
       text-transform: uppercase;
       font-size: 24px;
       color: #3EAB17;
-      font-family: Montserrat-Bold;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       padding: 17px 10px 15px 10px;
       display: flex;
       justify-content: center;
@@ -2717,7 +2771,8 @@ body{
     }
     &-proc-desc{
       font-size: 18px;
-      font-family: Montserrat-Medium;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       flex: 1;
       display: flex;
       justify-content: center;
@@ -2733,7 +2788,8 @@ body{
     &-proc-value{
       margin-top: 13px;
       font-size: 20px;
-      font-family: Montserrat-SemiBold;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       margin-bottom: 29px;
     }
     .button{
@@ -2758,7 +2814,8 @@ body{
         &:first-child{
           td{
             vertical-align: center;
-            font-family: Montserrat-Bold;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             text-align: center;
           }
         }
@@ -2766,7 +2823,8 @@ body{
           &:first-child{
             width: 20%;
             text-align: center;
-            font-family: Montserrat-Bold;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
           }
           &:nth-child(2){
             width: 20%;

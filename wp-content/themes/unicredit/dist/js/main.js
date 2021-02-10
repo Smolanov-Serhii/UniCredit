@@ -1,7 +1,5 @@
 $(document ).ready(function() {
 
-
-
     var $page = $('html, body');
     $('a[href*="#"]').click(function() {
         $page.animate({
@@ -56,7 +54,6 @@ $(document ).ready(function() {
 
     if ($('.uni-slider').length){
         $('.uni-slider .uni-slider__items').slick({
-            lazyLoad: 'ondemand',
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,

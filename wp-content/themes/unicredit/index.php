@@ -21,12 +21,15 @@ get_header();
                     $my_query->the_post();
                     ?>
                     <?php
-                    $thumb_id = get_post_thumbnail_id();
-                    $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
                     $post_id = get_the_ID();
                     $meta_values = get_post_meta($post_id, $key = 'ssylka_dlya_knopki_glavnogo_slajdera', true);
                     ?>
-                    <li class="uni-slider__item" style="background-image: url(<?php the_field('izobrazhenie_dlya_slajda')?>)">
+                    <li class="uni-slider__item">
+                        <picture>
+                            <source media="(min-width: 500px)"
+                                    srcset="<?php the_field('izobrazhenie_dlya_slajda')?>">
+                            <img src="<?php the_field('izobrazhenie_slajda_dlya_mobajla')?>" alt="">
+                        </picture>
                         <div class="uni-slider__item-title uni-container">
                             <?php the_field('zagolovok_dlya_slajda')?>
                         </div>
@@ -147,9 +150,9 @@ get_header();
         </div>
     </section>
     <section class="uni-evaluate">
-        <div class="uni-evaluate__title section-title">
+        <h2 class="uni-evaluate__title section-title">
             <?php the_field('zagolovok_bloka_oczenki',2);?>
-        </div>
+        </h2>
         <ul class="uni-evaluate__list">
             <?php
             $args = array(
@@ -293,13 +296,17 @@ get_header();
     <section class="uni-economy">
         <div class="uni-economy__body">
             <div class="uni-economy__bg">
-                <img src="<?php echo the_field('izobrazhenie_dlya_bloka_ekonomte_vremya',2);?>" alt="<?php the_field('zagolovok_dlya_bloka_ekonomte_vremya',2);?>">
+                <picture>
+                    <source media="(min-width: 500px)"
+                            srcset="<?php the_field('izobrazhenie_dlya_bloka_ekonomte_vremya', 2)?>">
+                    <img src="<?php echo the_field('mob_izobrazhenie_dlya_bloka_ekonomte_vremya',2);?>" alt="<?php the_field('zagolovok_dlya_bloka_ekonomte_vremya',2);?>">
+                </picture>
             </div>
             <div class="uni-economy__content">
                 <div class="uni-economy__content-wr">
-                    <div class="uni-economy__title">
+                    <h2 class="uni-economy__title">
                         <?php echo the_field('zagolovok_dlya_bloka_ekonomte_vremya',2);?>
-                    </div>
+                    </h2>
                     <div class="uni-economy__subtitle">
                         <?php echo the_field('podzagolovok_dlya_bloka_ekonomte_vremya',2);?>
                     </div>
@@ -318,15 +325,15 @@ get_header();
         </section>
     <div class="uni-question__background">
             <div class="uni-question__quest">
-                <div class="uni-question__quest-title">
+                <h2 class="uni-question__quest-title">
                     <?php echo the_field('zagolovok_bloka_voprosy',2);?>
-                </div>
+                </h2>
                 <div class="uni-question__quest-items">
                     <?php
                     $args = array(
                         'post_type' => 'question',
-                        'showposts' => "", //сколько показать статей
-                        'orderby' => "data", //сортировка по дате
+                        'showposts' => "-1", //сколько показать статей
+                        'orderby' => "menu_order", //сортировка по дате
                         'caller_get_posts' => 1);
                     $my_query = new wp_query($args);
                     $counter = 1;

@@ -580,12 +580,9 @@ add_action( 'widgets_init', 'unicredit_widgets_init' );
 function unicredit_scripts() {
 	wp_enqueue_style( 'unicredit-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
 	wp_style_add_data( 'unicredit-style', 'rtl', 'replace' );
-    wp_enqueue_script('newscript', get_template_directory_uri() . '/dist/js/common.js');
-	wp_enqueue_script( 'unicredit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+//    wp_enqueue_script('newscript', get_template_directory_uri() . '/dist/js/common.js');
+//	wp_enqueue_script( 'unicredit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'unicredit_scripts' );
 
@@ -616,3 +613,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//обратная хронология при выводе записей start
+function wph_ascending_order($query) {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    $query->set('order', 'ASC');
+}
+add_action('pre_get_posts', 'wph_ascending_order');
+//обратная хронология при выводе записей end
+
+//Remove JQuery migrate
+
+function remove_jquery_migrate( $scripts ) {
+    if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+        $script = $scripts->registered['jquery'];
+        if ( $script->deps ) {
+// Check whether the script has any dependencies
+
+            $script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+        }
+    }
+}
+add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+add_action( 'wp_enqueue_scripts', 'jquery_script_method' );
+function jquery_script_method() {
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', false, null, true );
+    wp_enqueue_script( 'jquery' );
+}

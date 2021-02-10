@@ -13,7 +13,6 @@
 
 	<footer id="uni-footer" class="uni-footer">
         <div class="uni-footer__map" data-icon="<?php echo get_template_directory_uri()?>/images/marker-map.svg">
-            <script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
             <div id="map" style="width:100%; height:100%;"></div>
             <div class="uni-footer__content">
                 <div class="uni-footer__content-logo">
@@ -63,8 +62,12 @@
             </a>
         </div>
 	</footer>
-
-
+<!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>-->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@0.6.12/dist/js/perfect-scrollbar.jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/selectric@1.13.0/public/jquery.selectric.min.js" defer></script>
+<script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript" defer></script>
+<script src="<?php echo get_template_directory_uri()?>/dist/js/common.js" defer></script>
 <?php wp_footer(); ?>
 
 </body>
