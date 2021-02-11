@@ -1,6 +1,19 @@
 $(document ).ready(function() {
 
-
+    if ($('.quest-slides').length){
+        $('.quest-slides').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: false,
+            arrows: false,
+            adaptiveHeight: true,
+            // prevArrow: $('.prev'),
+            // nextArrow: $('.next'),
+        });
+        $('.quest-next').on('click', function() {
+            $('.quest-slides').slick('slickNext');
+        });
+    }
 
     var $page = $('html, body');
     $('a[href*="#"]').click(function() {

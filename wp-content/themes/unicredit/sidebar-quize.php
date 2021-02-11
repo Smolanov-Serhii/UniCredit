@@ -13,5 +13,4 @@ if ( ! is_active_sidebar( 'quize' ) ) {
 ?>
 
 	<?php dynamic_sidebar( 'quize' ); ?>
-<?php democracy_poll( 1 ); ?>
-<?php democracy_poll( 2 ); ?>
+
