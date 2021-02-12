@@ -61,14 +61,14 @@ get_header();
             <div class="uni-calculate__left">
                 <div class="uni-calculate__row">
                     <span class="first-title">Необходимая сумма</span>
-                    <span class="second-title">10 000 - 1 000 000 BUY</span>
-                    <input class="editable-box" type="text" placeholder="1000000" id='sum'  value='10000'>
+                    <span class="second-title">10 000 - 1 000 000 BYN</span>
+                    <input class="editable-box" type="number" placeholder="1000000" id='sum'  value='10000'>
                     <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
                     <span class="second-title">1 год - 30 лет</span>
-                    <input class="editable-box" type="text" placeholder="1" id='term' value='1'>
+                    <input class="editable-box" type="number" placeholder="1" id='term' value='1'>
                     <input class="editable-slider" type="range" name="item-term" min="10" max="30" value="1" id=''>
                 </div>
                 <div class="uni-calculate__row">
@@ -87,7 +87,7 @@ get_header();
                     Ежемесячный платёж
                 </div>
                 <div class="uni-calculate__right-pay">
-                    <span class="сюда месячный платёж" id='for_month'></span>buy
+                    <span class="сюда месячный платёж" id='for_month'></span>BYN
                 </div>
                 <div class="uni-calculate__right-proc-desc">
                     Процентная ставка

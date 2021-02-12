@@ -451,6 +451,7 @@ body{
       height: 100%;
       padding: 50px calc(50% - 250px) 130px 100px;
       align-items: flex-end;
+      position: relative;
       @media all and (max-width: 1350px) {
         padding: 50px calc(50% - 30px) 130px 100px;
       }
@@ -1879,7 +1880,7 @@ body{
         input[type="submit"]{
           border: none;
         }
-        input[type="text"]{
+        input[type="number"]{
           border: none;
           border-bottom: 1px solid #E0E0E0;
         }

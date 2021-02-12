@@ -138,7 +138,6 @@ $(document ).ready(function() {
         $('.uni-tabs .uni-tabs__navs-item').on('click', function(){
             let ClickedNav = $(this).data('navid');
             let NeedElem = $( ".uni-tabs .uni-tabs__content-item[data-contid='"+ClickedNav+"']" );
-            console.log(NeedElem);
             $('.uni-tabs .uni-tabs__navs-item').removeClass('active-tab');
             $(this).addClass('active-tab');
             $('.uni-tabs .uni-tabs__content-item').removeClass('active-tab');

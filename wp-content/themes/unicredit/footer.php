@@ -66,7 +66,11 @@
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@0.6.12/dist/js/perfect-scrollbar.jquery.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/selectric@1.13.0/public/jquery.selectric.min.js" defer></script>
-<script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript" defer></script>
+<head>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=002aea30-4c19-446a-8a25-9d7ff12d5a8a&lang=ru_RU"
+            type="text/javascript" defer>
+    </script>
+</head>
 <script src="<?php echo get_template_directory_uri()?>/dist/js/common.js" defer></script>
 <?php wp_footer(); ?>
 
