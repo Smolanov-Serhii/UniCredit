@@ -3,8 +3,8 @@
 @import "default";
 @import "fresco";
 @import "slick";
-@import "aos";
-@import "perfect-scrollbar";
+//@import "aos";
+//@import "perfect-scrollbar";
 
 
 //@font-face {
@@ -179,6 +179,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 730px;
+    margin-left: 60px;
+    @media all and (max-width: 1180px) {
+      min-width: auto;
+      flex: 1;
+    }
   }
   .uni-container{
     display: flex;
@@ -359,9 +365,9 @@ body{
           @media all and (max-width: 1300px) {
             font-size: 12px;
           }
-          &:hover{
-            color: white;
-          }
+          //&:hover{
+          //  color: white;
+          //}
         }
       }
     }
@@ -1949,6 +1955,7 @@ body{
       display: flex;
       .quest-slide{
         width: 100%;
+        overflow: hidden;
         .wpcf7-list-item-label{
           display: flex;
           align-items: center;
@@ -1999,6 +2006,7 @@ body{
         .quest-next, .button{
           display: inline-flex;
           padding: 13px 45px;
+          margin-top: 20px;
         }
         .quest-slide__content{
           display: flex;
@@ -2024,6 +2032,15 @@ body{
             font-size: 18px;
             line-height: 22px;
             font-family: 'Montserrat', sans-serif;
+          }
+          .number-only{
+            border: none;
+            border-bottom: 1px solid #f0dd45;
+          }
+          input[type='text'], input[type='tel']{
+            border: none;
+            border-bottom: 1px solid #f0dd45;
+            margin-top: 10px;
           }
         }
       }
@@ -3100,4 +3117,23 @@ body{
       height: auto;
     }
   }
+}
+.captcha-image{
+  border: none!important;
+  .cf7ic_instructions{
+
+  }
+  label{
+    input{
+      display: none!important;
+    }
+    svg{
+      path{
+        fill: #f0dd45;
+      }
+    }
+  }
+}
+.rc-anchor{
+  display: none;
 }

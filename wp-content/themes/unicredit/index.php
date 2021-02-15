@@ -469,9 +469,9 @@ get_header();
                 </div>
             </div>
             <div class="uni-reviewes__links">
-                <div class="button-green js-reviewe">
-                    Оставить свой отзыв
-                </div>
+<!--                <div class="button-green js-reviewe">-->
+<!--                    Оставить свой отзыв-->
+<!--                </div>-->
                 <a href="<?php echo get_theme_mod('otzovik'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/otzovik.jpg"></a>
                 <a href="<?php echo get_theme_mod('yandex-rev'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/yandex.jpg"></a>
                 <a href="<?php echo get_theme_mod('yell'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/yell.jpg"></a>
@@ -486,30 +486,11 @@ get_header();
                 </svg>
             </div>
             <div class="uni-question__person">
-                <div class="uni-question__photo">
-                    <img src="<?php echo the_field('ukazhite_izobrazhenie_sotrudnika',2);?>">
-                </div>
-                <div class="uni-question__name">
-                    <?php the_field('ukazhite_imya_sotrudnika',2);?>
-                </div>
-                <div class="uni-question__work">
-                    <?php the_field('dolzhnost_sotrudnika',2);?>
-                </div>
-
-                <div class="uni-question__desc">
-                    <?php the_field('tekst_pod_sotrudnikom',2);?>
-                </div>
-                <a href="tel:<?php echo get_theme_mod('phone'); ?>" class="uni-question__phone">
-                    <?php echo get_theme_mod('phone'); ?>
-                </a>
-                <span class="devider">
-                        или
-                    </span>
                 <div class="uni-question__desc2">
                     <?php the_field('opisanie_pod_telefonom',2);?>
                 </div>
                 <div class="wc7">
-                    <?php echo do_shortcode('[contact-form-7 id="129" title="Форма Задать вопрос"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="288" title="Форма Попап"]'); ?>
                 </div>
             </div>
         </div>

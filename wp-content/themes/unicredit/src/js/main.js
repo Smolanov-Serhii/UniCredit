@@ -98,9 +98,11 @@ $(document ).ready(function() {
         $('.quest-slides').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
+            infinite: false,
             draggable: false,
             arrows: false,
             adaptiveHeight: true,
+
             // prevArrow: $('.prev'),
             // nextArrow: $('.next'),
         });
@@ -118,7 +120,7 @@ $(document ).ready(function() {
     });
 
     window.onload = function () {
-        DublicateWidth();
+        // DublicateWidth();
         QuestHeight();
         }
     function DublicateWidth(){
