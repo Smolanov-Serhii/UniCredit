@@ -67,7 +67,9 @@ body{
     padding-top: 60px;
   }
 }
-
+.lock-body{
+  overflow: hidden;
+}
 .uni-container{
   max-width: 1400px;
   margin: auto;
@@ -1134,7 +1136,7 @@ body{
     }
   }
 }
-.uni-question{
+.uni-question, .popup-modal{
   padding: 60px 0 60px 0;
   background-image: url("../../images/zig.svg");
   background-position: top left;
@@ -1599,6 +1601,56 @@ body{
   background-position: top left;
   background-repeat: repeat;
   padding-bottom: 80px;
+  overflow: hidden;
+  .slick-prev {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 30px);
+    background-color: transparent;
+    color: transparent;
+    width: 30px;
+    height: 60px;
+    border: none;
+    background-image: url(../../images/logo-prev.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 3;
+    @media all and (max-width: 1350px) {
+      left: 0;
+    }
+    @media all and (max-width: 900px) {
+      left: 50px;
+    }
+    @media all and (max-width: 600px) {
+      left: 10px;
+      width: 15px;
+    }
+  }
+  .slick-next {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 30px);
+    background-color: transparent;
+    color: transparent;
+    width: 30px;
+    height: 60px;
+    border: none;
+    background-image: url(../../images/logo_next.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @media all and (max-width: 1350px) {
+      right: 0;
+    }
+    @media all and (max-width: 900px) {
+      right: 50px;
+    }
+    @media all and (max-width: 600px) {
+      right: 10px;
+      width: 15px;
+    }
+  }
   @media all and (max-width: 600px) {
     padding-bottom: 20px;
   }
@@ -1624,35 +1676,49 @@ body{
     }
   }
   &__text{
-    width: 62%;
+    //width: 62%;
+    width: 100%;
+    position: relative;
+    .slick-slide{
+      margin: 0 10px;
+      height: auto;
+    }
     @media all and (max-width: 900px) {
       width: 100%;
     }
     .slick-slide{
       padding: 0 10px;
     }
-    .ps-scrollbar-y-rail{
-      background-color: #E7E7E7!important;
-      opacity: 1;
-      width: 7px;
-      right: 5px;
-      margin-top: 34px;
-    }
-    .ps-scrollbar-y{
-      background-color: #ECD416!important;
-      border-radius: 4px;
-      width: 13px!important;
-      right: -3px!important;
-    }
+    //.ps-scrollbar-y-rail{
+    //  background-color: #E7E7E7!important;
+    //  opacity: 1;
+    //  width: 7px;
+    //  right: 5px;
+    //  margin-top: 34px;
+    //}
+    //.ps-scrollbar-y{
+    //  background-color: #ECD416!important;
+    //  border-radius: 4px;
+    //  width: 13px!important;
+    //  right: -3px!important;
+    //}
     .strong-content{
-      height: 522px;
-      overflow: scroll;
+      //height: 522px;
+      //overflow: scroll;
+      height: auto;
+      margin-bottom: 40px;
       position: relative;
       padding-right: 38px;
+      padding-left: 38px;
       @media all and (max-width: 900px) {
         height: auto;
-        overflow: auto;
-        padding-right: 0;
+        padding: 0 100px;
+      }
+      @media all and (max-width: 700px) {
+        padding: 0 30px;
+      }
+      .slick-list{
+
       }
     }
     .wpmtst-testimonial{
@@ -1709,7 +1775,9 @@ body{
     }
   }
   &__video{
-    width: calc(38% - 30px);
+    //width: calc(38% - 30px);
+    width: 100%;
+    position: relative;
     @media all and (max-width: 900px) {
       width: 100%;
     }
@@ -1721,16 +1789,24 @@ body{
         }
       }
     }
+    .slick-slide{
+      margin: 0 10px;
+    }
     &-list{
-      height: 522px;
-      overflow: scroll;
-      position: relative;
-      padding-right: 34px;
+      //height: 522px;
+      //overflow: scroll;
+      //position: relative;
+      padding-right: 38px;
+      padding-left: 38px;
       padding-top: 14px;
+      height: auto;
+
       @media all and (max-width: 900px) {
         height: auto;
-        overflow: auto;
-        padding-right: 0;
+        padding: 0 100px;
+      }
+      @media all and (max-width: 700px) {
+        padding: 0 30px;
       }
       .ps-scrollbar-y-rail{
         background-color: #E7E7E7!important;
@@ -1753,7 +1829,7 @@ body{
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      display: flex;
+      display: flex!important;
       justify-content: center;
       align-items: center;
       position: relative;
@@ -1856,6 +1932,9 @@ body{
   padding: 0 100px;
   width: 100%;
   margin: 0 auto 80px auto;
+  .wpcf7-form-control-wrap .dolg{
+    margin-bottom: 20px;
+  }
   h3{
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
@@ -2685,6 +2764,21 @@ body{
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 8px;
+    .container{
+      position: relative;
+      width: 100%;
+    }
+    &-abs{
+      position: absolute;
+      right: 30px;
+      bottom: 0;
+      height: calc(100% - 9px);
+      display: flex;
+      align-items: center;
+      @media all and (max-width: 500px) {
+        font-size: 14px;
+      }
+    }
     @media all and (max-width: 500px) {
       margin-bottom: 0;
     }
@@ -2939,6 +3033,71 @@ body{
           }
         }
       }
+    }
+  }
+}
+.popup-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.7);
+  .ajax-loader{
+    display: none!important;
+  }
+  .uni-question__form{
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    position: relative;
+    padding: 30px;
+  }
+  .close-btn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    svg{path{
+      transition: 0.3s;
+    }}
+    &:hover{
+      svg{
+        path{
+          fill: black;
+        }
+      }
+    }
+  }
+  .wpcf7-response-output{
+    font-size: 10px!important;
+  }
+  .uni-question__name{
+    font-size: 20px;
+  }
+  .uni-question__desc{
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .uni-question__desc{
+    margin-top: 8px;
+    font-size: 12px;
+  }
+  .wc7{
+    margin-top: 10px;
+    input{
+      padding: 8px 20px;
+    }
+  }
+  .uni-question__photo{
+    width: 60%;
+    height: auto;
+    img{
+      width: 100%;
+      height: auto;
     }
   }
 }

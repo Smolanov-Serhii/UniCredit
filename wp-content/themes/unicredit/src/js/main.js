@@ -1,5 +1,99 @@
 $(document ).ready(function() {
 
+    if ($('.popup-modal').length){
+        $( ".js-make-call" ).click(function() {
+            ToglePopup();
+        });
+        $( ".close-btn" ).click(function() {
+            ToglePopup();
+        });
+    }
+    function ToglePopup(){
+        $('.popup-modal').fadeToggle(300);
+        $('body').toggleClass('lock-body');
+    }
+    function ToglePopupClose(){
+        $('.popup-modal').fadeOut(300);
+        $('body').removeClass('lock-body');
+        $('.wpcf7-response-output').fadeOut(100);
+    }
+
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+
+        setTimeout(function () {
+            ToglePopupClose();
+        }, 2000)
+    }, false );
+
+    if ($('.uni-reviewes').length) {
+        $('.uni-reviewes__video-list').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            centerMode: false,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                    }
+                }
+            ]
+        });
+        $('.strong-content').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    centerMode: false,
+                    arrows: true,
+                    responsive: [
+                        {
+                            breakpoint: 1080,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                centerMode: false,
+                            }
+                        },
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                centerMode: false,
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                centerMode: false,
+                            }
+                        },
+                        {
+                            breakpoint: 500,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                centerMode: false,
+                            }
+                        }
+                    ]
+                });
+    };
+
     if ($('.quest-slides').length){
         $('.quest-slides').slick({
             slidesToShow: 1,
@@ -73,6 +167,7 @@ $(document ).ready(function() {
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
+            fade: true,
             autoplay: true,
             arrows:false,
             dots: true,
@@ -159,35 +254,35 @@ $(document ).ready(function() {
             $(this).find('.uni-question__quest-answer').toggleClass('active');
         });
     }
-    if (  jQuery(window).width() >= 900 ) {
-        $('.uni-reviewes__text .strong-content').perfectScrollbar();
-        $('.uni-reviewes__video-list').perfectScrollbar();
-    } else {
-        $('.strong-content').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            centerMode: true,
-            arrows: false,
-        });
-        $('.uni-reviewes__video-list').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            centerMode: true,
-            arrows: false,
-            responsive: [
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        centerMode: true,
-                    }
-                }
-            ]
-        });
-    }
+    // if (  jQuery(window).width() >= 900 ) {
+    //     $('.uni-reviewes__text .strong-content').perfectScrollbar();
+    //     $('.uni-reviewes__video-list').perfectScrollbar();
+    // } else {
+    //     $('.strong-content').slick({
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+    //         infinite: true,
+    //         centerMode: true,
+    //         arrows: false,
+    //     });
+    //     $('.uni-reviewes__video-list').slick({
+    //         slidesToShow: 3,
+    //         slidesToScroll: 1,
+    //         infinite: true,
+    //         centerMode: true,
+    //         arrows: false,
+    //         responsive: [
+    //             {
+    //                 breakpoint: 600,
+    //                 settings: {
+    //                     slidesToShow: 1,
+    //                     slidesToScroll: 1,
+    //                     centerMode: true,
+    //                 }
+    //             }
+    //         ]
+    //     });
+    // }
     if (  jQuery(window).width() >= 1100 ) {
         var FirstCoord = 53.925701;
         var SecondCoord = 30.341069;
@@ -291,7 +386,7 @@ $(document ).ready(function() {
             'Ноябрь',
             'Декабрь',
         ]
-        var html = '<tr><td>Месяц</td><td>Платежка</td><td>Осн. долг</td><td>Проценты</td><td>Доп. платежи</td><td>Остаток по долгу</td></tr>';
+        var html = '<tr><td>Месяц</td><td>Платежка</td><td>Осн. долг</td><td>Проценты</td><td>Остаток по долгу</td></tr>';
         // var x = s*(p+(p/(Math.pow((1+p),t)-1)));
 
         for(j = 1; j <= n; j++) {
@@ -308,12 +403,19 @@ $(document ).ready(function() {
             if(j == 1){
                 $('#for_month').html('' + parseInt(dp) + ' ');
             }
-            html += '<tr><td>'+m+' '+y+'</td><td>'+dp.toFixed(2)+'</td><td>'+os.toFixed(2)+'</td><td>'+pk.toFixed(2)+'</td><td>0.00</td><td>'+od.toFixed(2)+'</td></tr>'
+            html += '<tr><td>'+m+' '+y+'</td><td>'+dp.toFixed(2)+'</td><td>'+os.toFixed(2)+'</td><td>'+pk.toFixed(2)+'</td><td>'+od.toFixed(2)+'</td></tr>'
 
         }
-        $('#calculate_table').html(html)
+        $('#calculate_table').html(html);
 
     })
+    var elements = document.querySelectorAll('.number-only');
+    for (let i=0; i < elements.length; i++) {
+        elements[i].oninput = function() {
+            this.value = this.value.replace (/\D/g, '');
+        }
+    }
+
 
 
 });

@@ -62,14 +62,17 @@ get_header();
                 <div class="uni-calculate__row">
                     <span class="first-title">Необходимая сумма</span>
                     <span class="second-title">10 000 - 1 000 000 BYN</span>
-                    <input class="editable-box" type="number" placeholder="1000000" id='sum'  value='10000'>
+                    <input class="editable-box number-only" type="text" placeholder="1000000" id='sum'  value='10000'>
                     <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
                     <span class="second-title">1 год - 30 лет</span>
-                    <input class="editable-box" type="number" placeholder="1" id='term' value='1'>
-                    <input class="editable-slider" type="range" name="item-term" min="10" max="30" value="1" id=''>
+                    <span class="container">
+                        <input class="editable-box number-only" type="text" placeholder="1" id='term' value='1'>
+                    <span class="uni-calculate__row-abs">месяцев</span>
+                    </span>
+                    <input class="editable-slider" type="range" name="item-term" min="10" max="360" value="1" id=''>
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Обеспечение</span>
@@ -87,7 +90,7 @@ get_header();
                     Ежемесячный платёж
                 </div>
                 <div class="uni-calculate__right-pay">
-                    <span class="сюда месячный платёж" id='for_month'></span>BYN
+                    <span class="сюда месячный платёж" id='for_month'></span> BYN
                 </div>
                 <div class="uni-calculate__right-proc-desc">
                     Процентная ставка
@@ -288,7 +291,7 @@ get_header();
                     <div class="text"><?php the_field('opisanie_pod_dolzhnostyu',2);?></div>
                     <div class="phone"><?php echo get_theme_mod('phone'); ?></div>
                     <div class="descript"><?php the_field('tekst_pod_nomerom_telefona',2);?></div>
-                    <div class="button button-green">Оставьте заявку</div>
+                    <div class="button button-green js-make-call">Оставьте заявку</div>
                 </div>
             </div>
         </div>
@@ -310,7 +313,7 @@ get_header();
                     <div class="uni-economy__subtitle">
                         <?php echo the_field('podzagolovok_dlya_bloka_ekonomte_vremya',2);?>
                     </div>
-                    <div class="button button-green js-make-form">
+                    <div class="button button-green js-make-form js-make-call">
                         Подать заявку на рассмотрение
                     </div>
                 </div>
@@ -475,5 +478,41 @@ get_header();
             </div>
         </div>
     </section>
+    <div class="popup-modal" style="display: none;">
+        <div class="uni-question__form">
+            <div class="close-btn">
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.707078 0.292893C1.0976 -0.0976311 1.73077 -0.0976311 2.12129 0.292893L16.9142 15.0858L30.2929 1.70711C30.6834 1.31658 31.3166 1.31658 31.7071 1.70711C32.0976 2.09763 32.0976 2.7308 31.7071 3.12132L18.3284 16.5L31.7071 29.8787C32.0976 30.2692 32.0976 30.9024 31.7071 31.2929C31.3166 31.6834 30.6834 31.6834 30.2929 31.2929L16.9142 17.9142L2.12129 32.7071C1.73077 33.0976 1.0976 33.0976 0.707078 32.7071C0.316553 32.3166 0.316553 31.6834 0.707078 31.2929L15.5 16.5L0.707078 1.70711C0.316554 1.31658 0.316554 0.683417 0.707078 0.292893Z" fill="#F0DD45"/>
+                </svg>
+            </div>
+            <div class="uni-question__person">
+                <div class="uni-question__photo">
+                    <img src="<?php echo the_field('ukazhite_izobrazhenie_sotrudnika',2);?>">
+                </div>
+                <div class="uni-question__name">
+                    <?php the_field('ukazhite_imya_sotrudnika',2);?>
+                </div>
+                <div class="uni-question__work">
+                    <?php the_field('dolzhnost_sotrudnika',2);?>
+                </div>
+
+                <div class="uni-question__desc">
+                    <?php the_field('tekst_pod_sotrudnikom',2);?>
+                </div>
+                <a href="tel:<?php echo get_theme_mod('phone'); ?>" class="uni-question__phone">
+                    <?php echo get_theme_mod('phone'); ?>
+                </a>
+                <span class="devider">
+                        или
+                    </span>
+                <div class="uni-question__desc2">
+                    <?php the_field('opisanie_pod_telefonom',2);?>
+                </div>
+                <div class="wc7">
+                    <?php echo do_shortcode('[contact-form-7 id="129" title="Форма Задать вопрос"]'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
 get_footer();
