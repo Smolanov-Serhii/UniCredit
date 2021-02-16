@@ -90,7 +90,7 @@ get_header();
                     Ежемесячный платёж
                 </div>
                 <div class="uni-calculate__right-pay">
-                    <span class="сюда месячный платёж" id='for_month'></span> BYN
+                    <span class="сюда месячный платёж" id='for_month'></span>&nbsp BYN &nbsp
                 </div>
                 <div class="uni-calculate__right-proc-desc">
                     Процентная ставка

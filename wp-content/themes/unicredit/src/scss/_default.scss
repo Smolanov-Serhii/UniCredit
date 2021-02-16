@@ -40,6 +40,9 @@ p, pre{
   @media all and (max-width: 500px) {
     font-size: 14px;
   }
+  @media all and (max-width: 400px) {
+    font-size: 12px;
+  }
 }
 h1{
   font-family: 'Montserrat', sans-serif;

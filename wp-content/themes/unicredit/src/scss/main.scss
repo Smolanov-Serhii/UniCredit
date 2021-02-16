@@ -82,6 +82,10 @@ body{
 .uni-header{
   display: flex;
   flex-direction: column;
+  border-bottom: 2px solid #f0dd45;
+  @media all and (max-width: 900px) {
+    border: none;
+  }
   .mobile-item{
     display: none;
     position: fixed;
@@ -244,6 +248,7 @@ body{
           font-family: 'Montserrat', sans-serif;
           font-weight: 500;
           padding: 10px 0;
+          display: block;
           @media all and (max-width: 1300px) {
             font-size: 12px;
           }
@@ -362,6 +367,7 @@ body{
           font-family: 'Montserrat', sans-serif;
           font-weight: 500;
           transition: 0.3s;
+          pointer-events: none;
           @media all and (max-width: 1300px) {
             font-size: 12px;
           }
@@ -503,6 +509,42 @@ body{
     bottom: 130px;
     right: calc(((100vw - 1400px) / 2) + 100px);
     width: 524px;
+    .policy{
+      color: black;
+    }
+    .selectric-wrapper{
+      height: 100%;
+      width: 100%;
+      .selectric{
+        height: 100%;
+        span.label{
+          bottom: 0!important;
+          display: flex;
+          align-items: center;
+          font-size: 12px!important;
+          line-height: 17px;
+          text-align: left;
+          color: #B8B8B8;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          padding: 12px 5px 13px 15px;
+          margin-left: 0;
+        }
+      }
+      .selectric-items{
+        .selectric-scroll{
+          li{
+            font-size: 12px!important;
+            line-height: 17px;
+            text-align: left;
+            color: #B8B8B8;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            padding: 12px 5px 13px 15px;
+          }
+        }
+      }
+    }
     @media all and (max-width: 1500px) {
       right: 100px;
     }
@@ -2022,6 +2064,8 @@ body{
             margin-top: 30px;
             span{
               margin-bottom: 10px;
+              position: relative;
+              display: flex;
             }
           }
           .wpcf7-form-control-wrap{
@@ -2674,6 +2718,7 @@ body{
   padding: 0 100px;
   margin: 80px auto 0 auto;
   width: 100%;
+  overflow: hidden;
   @media all and (max-width: 1300px) {
     padding: 0 50px;
   }
@@ -2684,7 +2729,7 @@ body{
   &__tabs{
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible;
     .slick-arrow{
       background-color: transparent;
       border: none;
@@ -2739,6 +2784,7 @@ body{
         background: #F0DD45;
         box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.2);
         border-radius: 4px 4px 0px 0px;
+        z-index: 5;
         @media all and (max-width: 600px) {
           background-color: transparent;
           box-shadow: none;
@@ -3015,6 +3061,9 @@ body{
     box-sizing: border-box;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
     border-radius: 0px 0px 4px 4px;
+    @media all and (max-width: 500px) {
+      overflow: scroll;
+    }
     table{
       tr{
         &:first-child{
@@ -3121,7 +3170,9 @@ body{
 .captcha-image{
   border: none!important;
   .cf7ic_instructions{
-
+    span{
+      float: right;
+    }
   }
   label{
     input{
@@ -3136,4 +3187,34 @@ body{
 }
 .rc-anchor{
   display: none;
+}
+.grecaptcha-badge{
+  display: none!important;
+}
+.single-page{
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 100px 50px 100px;
+  @media all and (max-width: 768px) {
+    padding: 0 50px 50px 50px;
+  }
+  @media all and (max-width: 500px) {
+    padding: 0 10px 30px 10px;
+  }
+  &__title{
+    margin-top: 50px;
+    @media all and (max-width: 900px) {
+      margin-top: 0;
+    }
+    @media all and (max-width: 500px) {
+      margin-bottom: 20px;
+    }
+  }
+  &__content{
+    p, ol, ul, li{
+      @media all and (max-width: 500px) {
+        font-size: 12px;
+      }
+    }
+  }
 }

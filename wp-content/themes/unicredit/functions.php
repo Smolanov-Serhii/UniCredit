@@ -424,15 +424,15 @@ add_action('customize_register', function($customizer) {
         )
 
     );
-    $customizer->add_setting('messanger',
+    $customizer->add_setting('viber',
 
         array('default' => 'url')
 
     );
 
-    $customizer->add_control('messanger', array(
+    $customizer->add_control('viber', array(
 
-            'label' => 'messanger',
+            'label' => 'viber',
 
             'section' => 'section_one',
 

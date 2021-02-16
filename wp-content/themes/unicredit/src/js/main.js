@@ -127,7 +127,11 @@ $(document ).ready(function() {
         var FirstElem = $("#Main-menu").width();
         $(".uni-header__wrapper").width(FirstElem);
     }
-
+    if ($('.uni-slider__form').length){
+        $(function() {
+            $('.uni-slider__form select').selectric();
+        });
+    }
     if ($('.uni-calculate').length){
         $(function() {
             $('.uni-calculate select').selectric();
