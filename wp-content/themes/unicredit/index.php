@@ -33,7 +33,7 @@ get_header();
                         <div class="uni-slider__item-title uni-container">
                             <?php the_field('zagolovok_dlya_slajda')?>
                         </div>
-                        <div class="uni-slider__form-btn js-slider-form button button-green">
+                        <div class="uni-slider__form-btn js-slider-form button button-green js-make-call">
                             Заполнить заявку
                         </div>
                     </li>

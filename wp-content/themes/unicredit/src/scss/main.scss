@@ -382,6 +382,45 @@ body{
 .uni-slider{
   height: 571px;
   position: relative;
+  .kc_captcha{
+    width: 100% !important;
+    .wpcf7-radio{
+      position: static!important;
+    }
+  }
+  .captcha-image{
+    position: static!important;
+    width: 100% !important;
+    display: flex;
+    padding: 0!important;
+    align-items: center;
+    justify-content: space-between;
+    @media all and (max-width: 500px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    svg{
+      height: 40px;
+      width: auto;
+      path{
+        fill: #41b718;
+      }
+    }
+    .cf7ic_instructions{
+      flex: 1;
+      position: static!important;
+      text-align: left;
+      @media all and (max-width: 500px) {
+        width: 100% !important;
+        flex: auto;
+        text-align: center;
+      }
+      span{
+        float: right;
+        position: static!important;
+      }
+    }
+  }
   @media all and (max-width: 900px) {
     height: auto;
   }
@@ -584,6 +623,7 @@ body{
       display: none;
       @media all and (max-width: 1200px) {
         display: flex;
+        height: auto!important;
       }
       @media all and (max-width: 900px) {
         display: none;
@@ -1980,6 +2020,25 @@ body{
   padding: 0 100px;
   width: 100%;
   margin: 0 auto 80px auto;
+  .captcha-image{
+    text-align: left!important;
+    @media all and (max-width: 600px) {
+      text-align: center!important;
+    }
+    .cf7ic_instructions{
+      align-items: flex-start;
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      @media all and (max-width: 600px) {
+        align-items: center;
+        text-align: center;
+      }
+      span{
+        float: right;
+      }
+    }
+  }
   .wpcf7-form-control-wrap .dolg{
     margin-bottom: 20px;
   }
@@ -2007,6 +2066,9 @@ body{
         }
         input[type="submit"]{
           border: none;
+          @media all and (max-width: 600px) {
+            width: 100%;
+          }
         }
         input[type="number"]{
           border: none;
