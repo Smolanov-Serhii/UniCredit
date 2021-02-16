@@ -578,7 +578,7 @@ add_action( 'widgets_init', 'unicredit_widgets_init' );
  * Enqueue scripts and styles.
  */
 function unicredit_scripts() {
-	wp_enqueue_style( 'unicredit-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
+	wp_enqueue_style( 'unicredit-style', get_template_directory_uri() . '/dist/css/style.css?v=2', array(), _S_VERSION );
 	wp_style_add_data( 'unicredit-style', 'rtl', 'replace' );
 //    wp_enqueue_script('newscript', get_template_directory_uri() . '/dist/js/common.js');
 //	wp_enqueue_script( 'unicredit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
