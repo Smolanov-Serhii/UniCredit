@@ -47,13 +47,13 @@ get_header();
     </section>
     <section class="uni-calculate">
         <div class="uni-calculate__tabs">
-            <div class="uni-calculate__tab-item active-calc-tab" data-min="10000" data-max="1000000" data-proc="9.5" data-minmonth="3" data-maxmonth="84">
+            <div class="uni-calculate__tab-item active-calc-tab" data-min="300" data-max="1000000" data-proc="13.5" data-minmonth="3" data-maxmonth="84">
                 Кредит наличными
             </div>
-            <div class="uni-calculate__tab-item" data-min="1000" data-max="100000" data-proc="12" data-minmonth="12" data-maxmonth="90">
+            <div class="uni-calculate__tab-item" data-min="300" data-max="100000" data-proc="13.5" data-minmonth="12" data-maxmonth="90">
                 Рефинансирование
             </div>
-            <div class="uni-calculate__tab-item" data-min="100000" data-max="10000000" data-proc="10.5" data-minmonth="6" data-maxmonth="604">
+            <div class="uni-calculate__tab-item" data-min="300" data-max="10000000" data-proc="10.5" data-minmonth="6" data-maxmonth="604">
                 Лизинг авто
             </div>
         </div>
@@ -61,9 +61,9 @@ get_header();
             <div class="uni-calculate__left">
                 <div class="uni-calculate__row">
                     <span class="first-title">Необходимая сумма</span>
-                    <span class="second-title">10 000 - 1 000 000 BYN</span>
-                    <input class="editable-box number-only" type="text" placeholder="1000000" id='sum'  value='10000'>
-                    <input class="editable-slider" type="range" name="item-sum" min="10000" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
+                    <span class="second-title">300 - 1 000 000 BYN</span>
+                    <input class="editable-box number-only" type="text" placeholder="300" id='sum'  value='300'>
+                    <input class="editable-slider" type="range" name="item-sum" min="300" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
@@ -96,7 +96,7 @@ get_header();
                     Процентная ставка
                 </div>
                 <div class="uni-calculate__right-proc-value">
-                    от <span id="data-proc">9</span>% годовых <!--     процент из data-proc               -->
+                    от <span id="data-proc">13.5</span>% годовых <!--     процент из data-proc               -->
 
                 </div>
                 <div class="button button-green js-do-calculate">Подробный расчёт</div>

@@ -381,6 +381,7 @@ $(document ).ready(function() {
     })
     $('.js-do-calculate').click(function () {
         $('.calculate-table').fadeIn(300);
+        $('#calculate_table').fadeIn(300);
         var s = $('#sum')[0].value*1;
         var n = $('#term')[0].value*1;
         var i = $('.active-calc-tab').data('proc') * 1;
