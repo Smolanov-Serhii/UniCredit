@@ -47,13 +47,13 @@ get_header();
     </section>
     <section class="uni-calculate">
         <div class="uni-calculate__tabs">
-            <div class="uni-calculate__tab-item active-calc-tab" data-min="10000" data-max="1000000" data-proc="9.5">
+            <div class="uni-calculate__tab-item active-calc-tab" data-min="10000" data-max="1000000" data-proc="9.5" data-minmonth="3" data-maxmonth="84">
                 Кредит наличными
             </div>
-            <div class="uni-calculate__tab-item" data-min="1000" data-max="100000" data-proc="12">
+            <div class="uni-calculate__tab-item" data-min="1000" data-max="100000" data-proc="12" data-minmonth="12" data-maxmonth="90">
                 Рефинансирование
             </div>
-            <div class="uni-calculate__tab-item" data-min="100000" data-max="10000000" data-proc="10.5">
+            <div class="uni-calculate__tab-item" data-min="100000" data-max="10000000" data-proc="10.5" data-minmonth="6" data-maxmonth="604">
                 Лизинг авто
             </div>
         </div>
@@ -67,12 +67,12 @@ get_header();
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
-                    <span class="second-title">1 год - 30 лет</span>
+                    <span class="second-title" style="display: flex">до &nbsp<div id="pars-period">84</div>&nbsp месяцев</span>
                     <span class="container">
-                        <input class="editable-box number-only" type="text" placeholder="1" id='term' value='1'>
+                        <input class="editable-box month-dublicate number-only" type="text" placeholder="1" id='term' value='1'>
                     <span class="uni-calculate__row-abs">месяцев</span>
                     </span>
-                    <input class="editable-slider" type="range" name="item-term" min="10" max="360" value="1" id=''>
+                    <input class="editable-slider month-input" type="range" name="item-term" min="10" max="360" value="1" id=''>
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Обеспечение</span>
@@ -442,39 +442,40 @@ get_header();
             <div class="uni-reviewes__text">
                 <?php echo do_shortcode('[testimonial_view id="1"]'); ?>
             </div>
-            <div class="uni-reviewes__video">
-                <div class="uni-reviewes__video-list">
-                    <?php
-                    $args = array(
-                        'post_type' => 'videorev',
-                        'showposts' => "100", //сколько показать статей
-                        'orderby' => "data", //сортировка по дате
-                        'caller_get_posts' => 1);
-                    $my_query = new wp_query($args);
-                    if ($my_query->have_posts()) {
-                        while ($my_query->have_posts()) {
-                            $my_query->the_post();
-                            ?>
-                            <a href="<?php the_field('ssylka_na_otzyv_youtube');?>"
-                               class="uni-reviewes__video-item fresco">
-                                <img class="bg-image" src="<?php echo the_field('kartinka_dlya_oblozhki');?>">
-                                <?php the_field('zagolovok_bloka_otzyvy');?>
-                                <span class="video-type"><?php the_field('opisanie_kredita');?></span>
-                                <img class="play-btn" src="<?php echo get_template_directory_uri()?>/images/youtube-play.png">
-                                <span class="video-name"><?php the_field('imya_polzovatelya');?></span>
-                            </a>
-                        <?php }
-                    }
-                    wp_reset_query(); ?>
-                </div>
-            </div>
+<!--            <div class="uni-reviewes__video">-->
+<!--                <div class="uni-reviewes__video-list">-->
+<!--                    --><?php
+//                    $args = array(
+//                        'post_type' => 'videorev',
+//                        'showposts' => "100", //сколько показать статей
+//                        'orderby' => "data", //сортировка по дате
+//                        'caller_get_posts' => 1);
+//                    $my_query = new wp_query($args);
+//                    if ($my_query->have_posts()) {
+//                        while ($my_query->have_posts()) {
+//                            $my_query->the_post();
+//                            ?>
+<!--                            <a href="--><?php //the_field('ssylka_na_otzyv_youtube');?><!--"-->
+<!--                               class="uni-reviewes__video-item fresco">-->
+<!--                                <img class="bg-image" src="--><?php //echo the_field('kartinka_dlya_oblozhki');?><!--">-->
+<!--                                --><?php //the_field('zagolovok_bloka_otzyvy');?>
+<!--                                <span class="video-type">--><?php //the_field('opisanie_kredita');?><!--</span>-->
+<!--                                <img class="play-btn" src="--><?php //echo get_template_directory_uri()?><!--/images/youtube-play.png">-->
+<!--                                <span class="video-name">--><?php //the_field('imya_polzovatelya');?><!--</span>-->
+<!--                            </a>-->
+<!--                        --><?php //}
+//                    }
+//                    wp_reset_query(); ?>
+<!--                </div>-->
+<!--            </div>-->
             <div class="uni-reviewes__links">
 <!--                <div class="button-green js-reviewe">-->
 <!--                    Оставить свой отзыв-->
 <!--                </div>-->
-                <a href="<?php echo get_theme_mod('otzovik'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/otzovik.jpg"></a>
+<!--                <a href="--><?php //echo get_theme_mod('otzovik'); ?><!--"><img src="--><?php //echo get_template_directory_uri(); ?><!--/images/otzovik.jpg"></a>-->
                 <a href="<?php echo get_theme_mod('yandex-rev'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/yandex.jpg"></a>
-                <a href="<?php echo get_theme_mod('yell'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/yell.jpg"></a>
+                <a href="<?php echo get_theme_mod('googleotz'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/google-otz.png"></a>
+<!--                <a href="--><?php //echo get_theme_mod('yell'); ?><!--"><img src="--><?php //echo get_template_directory_uri(); ?><!--/images/yell.jpg"></a>-->
             </div>
         </div>
     </section>

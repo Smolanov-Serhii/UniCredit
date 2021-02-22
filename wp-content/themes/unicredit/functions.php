@@ -492,6 +492,23 @@ add_action('customize_register', function($customizer) {
         )
 
     );
+    $customizer->add_setting('googleotz',
+
+        array('default' => 'url')
+
+    );
+
+    $customizer->add_control('googleotz', array(
+
+            'label' => 'Гугл отзывы',
+
+            'section' => 'section_one',
+
+            'type' => 'url',
+
+        )
+
+    );
     $customizer->add_setting('yandex-rev',
 
         array('default' => 'url')

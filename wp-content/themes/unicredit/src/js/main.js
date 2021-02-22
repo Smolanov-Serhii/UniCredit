@@ -370,6 +370,14 @@ $(document ).ready(function() {
         $('#calculate_table').html('');
         var i = $('.active-calc-tab').data('proc') * 1;
         $('#data-proc').html(i);
+        var minmonth = $('.active-calc-tab').data('minmonth') * 1;
+        var maxmonth = $('.active-calc-tab').data('maxmonth') * 1;
+
+        $('.month-input').attr('min', minmonth);
+        $('.month-input').val(minmonth);
+        $('.month-dublicate').val(minmonth);
+        $('.month-input').attr('max', maxmonth);
+        $('#pars-period').html(maxmonth);
     })
     $('.js-do-calculate').click(function () {
         $('.calculate-table').fadeIn(300);
