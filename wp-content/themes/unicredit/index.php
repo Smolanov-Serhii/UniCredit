@@ -47,23 +47,23 @@ get_header();
     </section>
     <section class="uni-calculate">
         <div class="uni-calculate__tabs">
-            <div class="uni-calculate__tab-item active-calc-tab" data-min="300" data-max="1000000" data-proc="13.5" data-minmonth="3" data-maxmonth="84">
+            <div class="uni-calculate__tab-item active-calc-tab" data-min="300" data-max="150000" data-proc="13.5" data-minmonth="3" data-maxmonth="84">
                 Кредит наличными
             </div>
-            <div class="uni-calculate__tab-item" data-min="300" data-max="100000" data-proc="13.5" data-minmonth="12" data-maxmonth="90">
+            <div class="uni-calculate__tab-item" data-min="500" data-max="100000" data-proc="13.5" data-minmonth="12" data-maxmonth="90">
                 Рефинансирование
             </div>
-            <div class="uni-calculate__tab-item" data-min="300" data-max="10000000" data-proc="10.5" data-minmonth="6" data-maxmonth="604">
-                Лизинг авто
+            <div class="uni-calculate__tab-item" data-min="1000" data-max="150000" data-proc="9.9" data-minmonth="6" data-maxmonth="120">
+                Автокредит
             </div>
         </div>
         <div class="uni-calculate__wrapper">
             <div class="uni-calculate__left">
                 <div class="uni-calculate__row">
                     <span class="first-title">Необходимая сумма</span>
-                    <span class="second-title">300 - 1 000 000 BYN</span>
-                    <input class="editable-box number-only" type="text" placeholder="300" id='sum'  value='300'>
-                    <input class="editable-slider" type="range" name="item-sum" min="300" max="1000000" value="10000"> <!-- в плейсхолдер передать data-max с табы -->
+                    <span class="second-title" style="display: flex;"><div id="start-sum">300</div>&nbsp-&nbsp<div id="end-sum">150000</div>&nbspBYN</span>
+                    <input class="editable-box number-only input-sum-slider-dublicate" type="text" placeholder="300" id='sum'  value='300'>
+                    <input class="editable-slider input-sum-slider" type="range" name="item-sum" min="300" max="150000" value="300"> <!-- в плейсхолдер передать data-max с табы -->
                 </div>
                 <div class="uni-calculate__row">
                     <span class="first-title">Срок</span>
@@ -73,13 +73,6 @@ get_header();
                     <span class="uni-calculate__row-abs">месяцев</span>
                     </span>
                     <input class="editable-slider month-input" type="range" name="item-term" min="10" max="360" value="1" id=''>
-                </div>
-                <div class="uni-calculate__row">
-                    <span class="first-title">Обеспечение</span>
-                    <select>
-                        <option>квартира</option>
-                        <option>машина</option>
-                    </select>
                 </div>
             </div>
             <div class="uni-calculate__right">

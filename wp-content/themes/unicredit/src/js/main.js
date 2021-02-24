@@ -362,7 +362,33 @@ $(document ).ready(function() {
         });
 
     }
+    $('.uni-calculate .slick-arrow').click(function(){
+        $('#calculate_table').html('');
+        var i = $('.uni-calculate .slick-current').data('proc') * 1;
+        $('#data-proc').html(i);
+        var minmonth = $('.uni-calculate .slick-current').data('minmonth') * 1;
+        var maxmonth = $('.uni-calculate .slick-current').data('maxmonth') * 1;
 
+        var summin = $('.uni-calculate .slick-current').data('min') * 1;
+        var summax = $('.uni-calculate .slick-current').data('max') * 1;
+
+
+        $('.input-sum-slider').attr('min', summin);
+        $('.input-sum-slider').attr('max', summax);
+        $('.input-sum-slider').val(summin);
+        $('.input-sum-slider-dublicate').val(summin);
+
+        $('#start-sum').html(summin);
+        $('#end-sum').html(summax);
+
+        $('.month-input').attr('min', minmonth);
+        $('.month-input').val(minmonth);
+
+        $('.month-dublicate').val(minmonth);
+        $('.month-input').attr('max', maxmonth);
+
+        $('#pars-period').html(maxmonth);
+    })
 
     $('.uni-calculate__tab-item').on('click', function () {
         $('.active-calc-tab').removeClass('active-calc-tab')
@@ -373,10 +399,24 @@ $(document ).ready(function() {
         var minmonth = $('.active-calc-tab').data('minmonth') * 1;
         var maxmonth = $('.active-calc-tab').data('maxmonth') * 1;
 
+        var summin = $('.active-calc-tab').data('min') * 1;
+        var summax = $('.active-calc-tab').data('max') * 1;
+
+
+        $('.input-sum-slider').attr('min', summin);
+        $('.input-sum-slider').attr('max', summax);
+        $('.input-sum-slider').val(summin);
+        $('.input-sum-slider-dublicate').val(summin);
+
+        $('#start-sum').html(summin);
+        $('#end-sum').html(summax);
+
         $('.month-input').attr('min', minmonth);
         $('.month-input').val(minmonth);
+
         $('.month-dublicate').val(minmonth);
         $('.month-input').attr('max', maxmonth);
+
         $('#pars-period').html(maxmonth);
     })
     $('.js-do-calculate').click(function () {
